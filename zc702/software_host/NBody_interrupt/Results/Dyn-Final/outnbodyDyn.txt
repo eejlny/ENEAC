@@ -1,0 +1,4059 @@
+blocking test -----------------------------------------
+Tue Jun 7 18:37:02 UTC 2016
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.176571 J :: FPGA= 4.505314 J :: Mem= 15.331789 J
+TOTAL E= 30.013674 J
+CLOCK_REALTIME = 25.140438 sec
+# of samples: 246
+sample every (real) = 0.102197 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.176952 J :: FPGA= 4.547226 J :: Mem= 15.365661 J
+TOTAL E= 30.089838 J
+CLOCK_REALTIME = 25.140272 sec
+# of samples: 246
+sample every (real) = 0.102196 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.200075 J :: FPGA= 4.507699 J :: Mem= 15.331057 J
+TOTAL E= 30.038832 J
+CLOCK_REALTIME = 25.140375 sec
+# of samples: 246
+sample every (real) = 0.102197 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.195048 J :: FPGA= 4.525120 J :: Mem= 15.347272 J
+TOTAL E= 30.067440 J
+CLOCK_REALTIME = 25.140416 sec
+# of samples: 246
+sample every (real) = 0.102197 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.191461 J :: FPGA= 4.506903 J :: Mem= 15.336340 J
+TOTAL E= 30.034705 J
+CLOCK_REALTIME = 25.140359 sec
+# of samples: 246
+sample every (real) = 0.102197 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.213696 J :: FPGA= 4.511472 J :: Mem= 15.326573 J
+TOTAL E= 30.051741 J
+CLOCK_REALTIME = 25.140169 sec
+# of samples: 246
+sample every (real) = 0.102196 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.182915 J :: FPGA= 4.533258 J :: Mem= 15.345137 J
+TOTAL E= 30.061310 J
+CLOCK_REALTIME = 25.140475 sec
+# of samples: 246
+sample every (real) = 0.102197 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.288677 J :: FPGA= 4.525841 J :: Mem= 15.312281 J
+TOTAL E= 30.126799 J
+CLOCK_REALTIME = 25.141190 sec
+# of samples: 246
+sample every (real) = 0.102200 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.186146 J :: FPGA= 4.529113 J :: Mem= 15.313840 J
+TOTAL E= 30.029100 J
+CLOCK_REALTIME = 25.137955 sec
+# of samples: 246
+sample every (real) = 0.102187 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.180667 J :: FPGA= 4.530601 J :: Mem= 15.319155 J
+TOTAL E= 30.030422 J
+CLOCK_REALTIME = 25.137599 sec
+# of samples: 246
+sample every (real) = 0.102185 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.211422 J :: FPGA= 4.552097 J :: Mem= 15.336957 J
+TOTAL E= 30.100476 J
+CLOCK_REALTIME = 25.137729 sec
+# of samples: 246
+sample every (real) = 0.102186 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.193806 J :: FPGA= 4.512610 J :: Mem= 15.346986 J
+TOTAL E= 30.053402 J
+CLOCK_REALTIME = 25.137983 sec
+# of samples: 246
+sample every (real) = 0.102187 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.190077 J :: FPGA= 4.540354 J :: Mem= 15.320153 J
+TOTAL E= 30.050584 J
+CLOCK_REALTIME = 25.137905 sec
+# of samples: 246
+sample every (real) = 0.102187 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.193356 J :: FPGA= 4.511228 J :: Mem= 15.329625 J
+TOTAL E= 30.034209 J
+CLOCK_REALTIME = 25.137663 sec
+# of samples: 246
+sample every (real) = 0.102186 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.195948 J :: FPGA= 4.517836 J :: Mem= 15.287768 J
+TOTAL E= 30.001552 J
+CLOCK_REALTIME = 25.137637 sec
+# of samples: 246
+sample every (real) = 0.102186 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.199260 J :: FPGA= 4.544812 J :: Mem= 15.312154 J
+TOTAL E= 30.056226 J
+CLOCK_REALTIME = 25.137851 sec
+# of samples: 246
+sample every (real) = 0.102186 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.179617 J :: FPGA= 4.502844 J :: Mem= 15.310665 J
+TOTAL E= 29.993126 J
+CLOCK_REALTIME = 25.136204 sec
+# of samples: 246
+sample every (real) = 0.102180 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.196518 J :: FPGA= 4.528288 J :: Mem= 15.317626 J
+TOTAL E= 30.042432 J
+CLOCK_REALTIME = 25.136438 sec
+# of samples: 246
+sample every (real) = 0.102181 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.246140 J :: FPGA= 4.565930 J :: Mem= 15.325095 J
+TOTAL E= 30.137165 J
+CLOCK_REALTIME = 25.136478 sec
+# of samples: 246
+sample every (real) = 0.102181 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.209132 J :: FPGA= 4.541573 J :: Mem= 15.344947 J
+TOTAL E= 30.095652 J
+CLOCK_REALTIME = 25.136414 sec
+# of samples: 246
+sample every (real) = 0.102181 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.213678 J :: FPGA= 4.527300 J :: Mem= 15.326942 J
+TOTAL E= 30.067920 J
+CLOCK_REALTIME = 25.136370 sec
+# of samples: 246
+sample every (real) = 0.102180 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.226079 J :: FPGA= 4.547502 J :: Mem= 15.302950 J
+TOTAL E= 30.076531 J
+CLOCK_REALTIME = 25.136391 sec
+# of samples: 246
+sample every (real) = 0.102180 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.248475 J :: FPGA= 4.526203 J :: Mem= 15.348746 J
+TOTAL E= 30.123425 J
+CLOCK_REALTIME = 25.136411 sec
+# of samples: 246
+sample every (real) = 0.102181 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.185194 J :: FPGA= 4.560424 J :: Mem= 15.310038 J
+TOTAL E= 30.055656 J
+CLOCK_REALTIME = 25.136457 sec
+# of samples: 246
+sample every (real) = 0.102181 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.199838 J :: FPGA= 4.528279 J :: Mem= 15.311799 J
+TOTAL E= 30.039916 J
+CLOCK_REALTIME = 25.135597 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.204497 J :: FPGA= 4.523426 J :: Mem= 15.324346 J
+TOTAL E= 30.052269 J
+CLOCK_REALTIME = 25.135644 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.232559 J :: FPGA= 4.513721 J :: Mem= 15.336348 J
+TOTAL E= 30.082628 J
+CLOCK_REALTIME = 25.135653 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.227228 J :: FPGA= 4.568224 J :: Mem= 15.312869 J
+TOTAL E= 30.108320 J
+CLOCK_REALTIME = 25.135787 sec
+# of samples: 246
+sample every (real) = 0.102178 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.228139 J :: FPGA= 4.539589 J :: Mem= 15.310731 J
+TOTAL E= 30.078458 J
+CLOCK_REALTIME = 25.135662 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.198053 J :: FPGA= 4.511638 J :: Mem= 15.324337 J
+TOTAL E= 30.034029 J
+CLOCK_REALTIME = 25.135511 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.215926 J :: FPGA= 4.570169 J :: Mem= 15.303189 J
+TOTAL E= 30.089284 J
+CLOCK_REALTIME = 25.135581 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.208273 J :: FPGA= 4.532517 J :: Mem= 15.357365 J
+TOTAL E= 30.098155 J
+CLOCK_REALTIME = 25.135334 sec
+# of samples: 246
+sample every (real) = 0.102176 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.227581 J :: FPGA= 4.537509 J :: Mem= 15.301432 J
+TOTAL E= 30.066522 J
+CLOCK_REALTIME = 25.135320 sec
+# of samples: 246
+sample every (real) = 0.102176 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.211772 J :: FPGA= 4.541341 J :: Mem= 15.310230 J
+TOTAL E= 30.063342 J
+CLOCK_REALTIME = 25.135288 sec
+# of samples: 246
+sample every (real) = 0.102176 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.214040 J :: FPGA= 4.552534 J :: Mem= 15.314248 J
+TOTAL E= 30.080821 J
+CLOCK_REALTIME = 25.135189 sec
+# of samples: 246
+sample every (real) = 0.102176 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.208655 J :: FPGA= 4.528578 J :: Mem= 15.303599 J
+TOTAL E= 30.040833 J
+CLOCK_REALTIME = 25.135250 sec
+# of samples: 246
+sample every (real) = 0.102176 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.243967 J :: FPGA= 4.532185 J :: Mem= 15.338280 J
+TOTAL E= 30.114433 J
+CLOCK_REALTIME = 25.135149 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.207088 J :: FPGA= 4.511606 J :: Mem= 15.329930 J
+TOTAL E= 30.048624 J
+CLOCK_REALTIME = 25.135164 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.210405 J :: FPGA= 4.563675 J :: Mem= 385.624249 J
+TOTAL E= 400.398330 J
+CLOCK_REALTIME = 25.135172 sec
+# of samples: 245
+sample every (real) = 0.102593 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 115.336332 J :: FPGA= 4.555612 J :: Mem= 15.325539 J
+TOTAL E= 135.217483 J
+CLOCK_REALTIME = 25.135248 sec
+# of samples: 245
+sample every (real) = 0.102593 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.197829 J :: FPGA= 4.551099 J :: Mem= 15.310211 J
+TOTAL E= 30.059139 J
+CLOCK_REALTIME = 25.135028 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.218496 J :: FPGA= 4.529196 J :: Mem= 15.318367 J
+TOTAL E= 30.066060 J
+CLOCK_REALTIME = 25.135110 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 11.054727 J :: FPGA= 110.705209 J :: Mem= 15.306583 J
+TOTAL E= 137.066520 J
+CLOCK_REALTIME = 25.135127 sec
+# of samples: 245
+sample every (real) = 0.102592 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.231153 J :: FPGA= 4.547678 J :: Mem= 15.335876 J
+TOTAL E= 30.114707 J
+CLOCK_REALTIME = 25.134933 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.201922 J :: FPGA= 4.533165 J :: Mem= 15.268776 J
+TOTAL E= 30.003864 J
+CLOCK_REALTIME = 25.135062 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.190278 J :: FPGA= 4.546190 J :: Mem= 15.308261 J
+TOTAL E= 30.044730 J
+CLOCK_REALTIME = 25.134865 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.229076 J :: FPGA= 4.517174 J :: Mem= 15.340840 J
+TOTAL E= 30.087089 J
+CLOCK_REALTIME = 25.134909 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.193207 J :: FPGA= 4.515064 J :: Mem= 15.327383 J
+TOTAL E= 30.035654 J
+CLOCK_REALTIME = 25.134822 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 1 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.200165 J :: FPGA= 4.519292 J :: Mem= 15.312387 J
+TOTAL E= 30.031843 J
+CLOCK_REALTIME = 25.134866 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 2 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.252533 J :: FPGA= 4.533628 J :: Mem= 15.330934 J
+TOTAL E= 30.117096 J
+CLOCK_REALTIME = 25.134982 sec
+# of samples: 246
+sample every (real) = 0.102175 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 3 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.248073 J :: FPGA= 4.536832 J :: Mem= 15.294778 J
+TOTAL E= 30.079682 J
+CLOCK_REALTIME = 25.134866 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 4 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.214294 J :: FPGA= 4.543418 J :: Mem= 15.333415 J
+TOTAL E= 30.091128 J
+CLOCK_REALTIME = 25.134844 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 5 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.207448 J :: FPGA= 4.514004 J :: Mem= 15.323304 J
+TOTAL E= 30.044756 J
+CLOCK_REALTIME = 25.134797 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 6 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.208978 J :: FPGA= 4.560461 J :: Mem= 15.295616 J
+TOTAL E= 30.065055 J
+CLOCK_REALTIME = 25.135421 sec
+# of samples: 246
+sample every (real) = 0.102177 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 7 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.236356 J :: FPGA= 1682.367149 J :: Mem= 15.290707 J
+TOTAL E= 1707.894211 J
+CLOCK_REALTIME = 25.135056 sec
+# of samples: 245
+sample every (real) = 0.102592 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 0 rep: 8 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.232102 J :: FPGA= 4.523151 J :: Mem= 15.298419 J
+TOTAL E= 30.053672 J
+CLOCK_REALTIME = 25.134781 sec
+# of samples: 246
+sample every (real) = 0.102174 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.919351 J :: FPGA= 3.739162 J :: Mem= 12.141808 J
+TOTAL E= 25.800321 J
+CLOCK_REALTIME = 20.598632 sec
+# of samples: 202
+sample every (real) = 0.101973 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.916629 J :: FPGA= 3.727688 J :: Mem= 12.147045 J
+TOTAL E= 25.791363 J
+CLOCK_REALTIME = 20.599170 sec
+# of samples: 202
+sample every (real) = 0.101976 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.804419 J :: FPGA= 3.768482 J :: Mem= 12.184545 J
+TOTAL E= 25.757446 J
+CLOCK_REALTIME = 20.619157 sec
+# of samples: 202
+sample every (real) = 0.102075 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.931284 J :: FPGA= 3.735588 J :: Mem= 12.150055 J
+TOTAL E= 25.816927 J
+CLOCK_REALTIME = 20.604692 sec
+# of samples: 202
+sample every (real) = 0.102003 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.928838 J :: FPGA= 3.720028 J :: Mem= 12.202244 J
+TOTAL E= 25.851110 J
+CLOCK_REALTIME = 20.599832 sec
+# of samples: 202
+sample every (real) = 0.101979 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.795474 J :: FPGA= 3.725909 J :: Mem= 1688.072751 J
+TOTAL E= 1701.594134 J
+CLOCK_REALTIME = 20.616438 sec
+# of samples: 201
+sample every (real) = 0.102569 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.958161 J :: FPGA= 3.729297 J :: Mem= 12.136502 J
+TOTAL E= 25.823961 J
+CLOCK_REALTIME = 20.594520 sec
+# of samples: 201
+sample every (real) = 0.102460 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.966366 J :: FPGA= 3.744341 J :: Mem= 12.179705 J
+TOTAL E= 25.890412 J
+CLOCK_REALTIME = 20.599805 sec
+# of samples: 202
+sample every (real) = 0.101979 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.437493 J :: FPGA= 3.749842 J :: Mem= 12.271103 J
+TOTAL E= 26.458437 J
+CLOCK_REALTIME = 20.602364 sec
+# of samples: 201
+sample every (real) = 0.102499 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.725565 J :: FPGA= 3.728138 J :: Mem= 12.181149 J
+TOTAL E= 25.634852 J
+CLOCK_REALTIME = 20.604399 sec
+# of samples: 202
+sample every (real) = 0.102002 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.964125 J :: FPGA= 3.710011 J :: Mem= 12.221656 J
+TOTAL E= 25.895791 J
+CLOCK_REALTIME = 20.598038 sec
+# of samples: 202
+sample every (real) = 0.101970 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.943689 J :: FPGA= 3.733325 J :: Mem= 12.160541 J
+TOTAL E= 25.837555 J
+CLOCK_REALTIME = 20.596681 sec
+# of samples: 201
+sample every (real) = 0.102471 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.915430 J :: FPGA= 3.721152 J :: Mem= 12.210701 J
+TOTAL E= 25.847284 J
+CLOCK_REALTIME = 20.596221 sec
+# of samples: 201
+sample every (real) = 0.102469 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.924837 J :: FPGA= 3.734367 J :: Mem= 12.130400 J
+TOTAL E= 25.789604 J
+CLOCK_REALTIME = 20.598675 sec
+# of samples: 202
+sample every (real) = 0.101974 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.937244 J :: FPGA= 3.734634 J :: Mem= 12.179202 J
+TOTAL E= 25.851080 J
+CLOCK_REALTIME = 20.598686 sec
+# of samples: 202
+sample every (real) = 0.101974 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.734389 J :: FPGA= 3.697606 J :: Mem= 12.204109 J
+TOTAL E= 25.636103 J
+CLOCK_REALTIME = 20.602316 sec
+# of samples: 202
+sample every (real) = 0.101992 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.912456 J :: FPGA= 3.743568 J :: Mem= 12.193342 J
+TOTAL E= 25.849366 J
+CLOCK_REALTIME = 20.594687 sec
+# of samples: 201
+sample every (real) = 0.102461 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.950467 J :: FPGA= 3.716924 J :: Mem= 12.186210 J
+TOTAL E= 25.853601 J
+CLOCK_REALTIME = 20.594376 sec
+# of samples: 201
+sample every (real) = 0.102460 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.933560 J :: FPGA= 3.760499 J :: Mem= 12.228797 J
+TOTAL E= 25.922856 J
+CLOCK_REALTIME = 20.594888 sec
+# of samples: 201
+sample every (real) = 0.102462 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.918060 J :: FPGA= 3.740125 J :: Mem= 12.153845 J
+TOTAL E= 25.812030 J
+CLOCK_REALTIME = 20.594754 sec
+# of samples: 201
+sample every (real) = 0.102461 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.899424 J :: FPGA= 3.738684 J :: Mem= 12.203871 J
+TOTAL E= 25.841979 J
+CLOCK_REALTIME = 20.594757 sec
+# of samples: 201
+sample every (real) = 0.102461 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.676525 J :: FPGA= 3.733680 J :: Mem= 12.237366 J
+TOTAL E= 25.647570 J
+CLOCK_REALTIME = 20.600379 sec
+# of samples: 202
+sample every (real) = 0.101982 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.919834 J :: FPGA= 3.718175 J :: Mem= 12.174518 J
+TOTAL E= 25.812527 J
+CLOCK_REALTIME = 20.594372 sec
+# of samples: 201
+sample every (real) = 0.102460 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.888403 J :: FPGA= 3.708604 J :: Mem= 12.225429 J
+TOTAL E= 25.822436 J
+CLOCK_REALTIME = 20.594769 sec
+# of samples: 201
+sample every (real) = 0.102462 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.723948 J :: FPGA= 3.715002 J :: Mem= 12.224582 J
+TOTAL E= 25.663532 J
+CLOCK_REALTIME = 20.597896 sec
+# of samples: 202
+sample every (real) = 0.101970 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.953871 J :: FPGA= 3.759701 J :: Mem= 12.251598 J
+TOTAL E= 25.965170 J
+CLOCK_REALTIME = 20.593828 sec
+# of samples: 201
+sample every (real) = 0.102457 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.941824 J :: FPGA= 3.737011 J :: Mem= 12.195689 J
+TOTAL E= 25.874524 J
+CLOCK_REALTIME = 20.593466 sec
+# of samples: 201
+sample every (real) = 0.102455 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.895068 J :: FPGA= 3.719261 J :: Mem= 12.216717 J
+TOTAL E= 25.831046 J
+CLOCK_REALTIME = 20.593783 sec
+# of samples: 201
+sample every (real) = 0.102457 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.925654 J :: FPGA= 3.750045 J :: Mem= 12.196513 J
+TOTAL E= 25.872212 J
+CLOCK_REALTIME = 20.593747 sec
+# of samples: 201
+sample every (real) = 0.102456 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.676212 J :: FPGA= 3.721000 J :: Mem= 12.172750 J
+TOTAL E= 25.569962 J
+CLOCK_REALTIME = 20.597402 sec
+# of samples: 202
+sample every (real) = 0.101967 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.898886 J :: FPGA= 3.734020 J :: Mem= 12.219706 J
+TOTAL E= 25.852612 J
+CLOCK_REALTIME = 20.593677 sec
+# of samples: 201
+sample every (real) = 0.102456 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.914713 J :: FPGA= 3.740382 J :: Mem= 12.184376 J
+TOTAL E= 25.839471 J
+CLOCK_REALTIME = 20.593759 sec
+# of samples: 201
+sample every (real) = 0.102457 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.908455 J :: FPGA= 3.736353 J :: Mem= 171.272497 J
+TOTAL E= 184.917304 J
+CLOCK_REALTIME = 20.593194 sec
+# of samples: 201
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.927842 J :: FPGA= 3.745047 J :: Mem= 12.194859 J
+TOTAL E= 25.867748 J
+CLOCK_REALTIME = 20.593065 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.933041 J :: FPGA= 3.735818 J :: Mem= 12.166990 J
+TOTAL E= 25.835850 J
+CLOCK_REALTIME = 20.592914 sec
+# of samples: 201
+sample every (real) = 0.102452 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.915820 J :: FPGA= 3.698436 J :: Mem= 12.195219 J
+TOTAL E= 25.809475 J
+CLOCK_REALTIME = 20.593231 sec
+# of samples: 201
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.675201 J :: FPGA= 3.748394 J :: Mem= 12.175882 J
+TOTAL E= 25.599477 J
+CLOCK_REALTIME = 20.596384 sec
+# of samples: 202
+sample every (real) = 0.101962 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.936265 J :: FPGA= 3.744544 J :: Mem= 12.216836 J
+TOTAL E= 25.897646 J
+CLOCK_REALTIME = 20.593062 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.608681 J :: FPGA= 3.747949 J :: Mem= 12.213963 J
+TOTAL E= 25.570592 J
+CLOCK_REALTIME = 20.595254 sec
+# of samples: 202
+sample every (real) = 0.101957 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.620111 J :: FPGA= 3.695682 J :: Mem= 12.141200 J
+TOTAL E= 26.456993 J
+CLOCK_REALTIME = 20.593090 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.922925 J :: FPGA= 3.738535 J :: Mem= 12.236420 J
+TOTAL E= 25.897880 J
+CLOCK_REALTIME = 20.593010 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.931045 J :: FPGA= 1680.815983 J :: Mem= 12.221102 J
+TOTAL E= 1702.968129 J
+CLOCK_REALTIME = 20.592927 sec
+# of samples: 201
+sample every (real) = 0.102452 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.902176 J :: FPGA= 3.719301 J :: Mem= 171.252547 J
+TOTAL E= 184.874024 J
+CLOCK_REALTIME = 20.593123 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.907787 J :: FPGA= 3.785637 J :: Mem= 12.221593 J
+TOTAL E= 25.915018 J
+CLOCK_REALTIME = 20.593038 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.925712 J :: FPGA= 3.709834 J :: Mem= 12.243841 J
+TOTAL E= 25.879388 J
+CLOCK_REALTIME = 20.593019 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.929737 J :: FPGA= 3.714459 J :: Mem= 12.224440 J
+TOTAL E= 25.868636 J
+CLOCK_REALTIME = 20.592732 sec
+# of samples: 201
+sample every (real) = 0.102451 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.647078 J :: FPGA= 3.744863 J :: Mem= 12.227641 J
+TOTAL E= 25.619582 J
+CLOCK_REALTIME = 20.633001 sec
+# of samples: 202
+sample every (real) = 0.102144 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.644094 J :: FPGA= 3.760062 J :: Mem= 12.240100 J
+TOTAL E= 25.644256 J
+CLOCK_REALTIME = 20.595637 sec
+# of samples: 202
+sample every (real) = 0.101959 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.665320 J :: FPGA= 3.710863 J :: Mem= 12.204053 J
+TOTAL E= 25.580236 J
+CLOCK_REALTIME = 20.595406 sec
+# of samples: 202
+sample every (real) = 0.101957 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.915467 J :: FPGA= 3.715838 J :: Mem= 12.187088 J
+TOTAL E= 25.818393 J
+CLOCK_REALTIME = 20.592489 sec
+# of samples: 201
+sample every (real) = 0.102450 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.668841 J :: FPGA= 3.753036 J :: Mem= 12.217600 J
+TOTAL E= 25.639476 J
+CLOCK_REALTIME = 20.595517 sec
+# of samples: 202
+sample every (real) = 0.101958 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.662617 J :: FPGA= 3.737111 J :: Mem= 12.218462 J
+TOTAL E= 25.618189 J
+CLOCK_REALTIME = 20.599226 sec
+# of samples: 202
+sample every (real) = 0.101976 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.881777 J :: FPGA= 3.704256 J :: Mem= 12.215072 J
+TOTAL E= 25.801105 J
+CLOCK_REALTIME = 20.592538 sec
+# of samples: 201
+sample every (real) = 0.102450 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.893426 J :: FPGA= 3.742429 J :: Mem= 12.175246 J
+TOTAL E= 25.811100 J
+CLOCK_REALTIME = 20.592742 sec
+# of samples: 201
+sample every (real) = 0.102451 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.644976 J :: FPGA= 3.756679 J :: Mem= 12.261293 J
+TOTAL E= 25.662948 J
+CLOCK_REALTIME = 20.595053 sec
+# of samples: 202
+sample every (real) = 0.101956 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 10.873006 J :: FPGA= 110.024588 J :: Mem= 12.173760 J
+TOTAL E= 133.071353 J
+CLOCK_REALTIME = 20.592983 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.639091 J :: FPGA= 3.575070 J :: Mem= 11.804799 J
+TOTAL E= 25.018961 J
+CLOCK_REALTIME = 19.992717 sec
+# of samples: 196
+sample every (real) = 0.102004 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.607634 J :: FPGA= 3.588740 J :: Mem= 11.839161 J
+TOTAL E= 25.035535 J
+CLOCK_REALTIME = 19.932699 sec
+# of samples: 195
+sample every (real) = 0.102219 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.598102 J :: FPGA= 3.552521 J :: Mem= 11.802212 J
+TOTAL E= 24.952835 J
+CLOCK_REALTIME = 19.876635 sec
+# of samples: 194
+sample every (real) = 0.102457 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.592200 J :: FPGA= 3.551061 J :: Mem= 11.832003 J
+TOTAL E= 24.975264 J
+CLOCK_REALTIME = 19.897141 sec
+# of samples: 195
+sample every (real) = 0.102037 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.600266 J :: FPGA= 3.552590 J :: Mem= 11.759032 J
+TOTAL E= 24.911888 J
+CLOCK_REALTIME = 19.871456 sec
+# of samples: 194
+sample every (real) = 0.102430 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.565974 J :: FPGA= 3.567716 J :: Mem= 11.767374 J
+TOTAL E= 24.901064 J
+CLOCK_REALTIME = 19.891003 sec
+# of samples: 195
+sample every (real) = 0.102005 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.515125 J :: FPGA= 3.547430 J :: Mem= 11.716288 J
+TOTAL E= 24.778844 J
+CLOCK_REALTIME = 19.852824 sec
+# of samples: 194
+sample every (real) = 0.102334 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.596738 J :: FPGA= 3.606365 J :: Mem= 11.776911 J
+TOTAL E= 24.980015 J
+CLOCK_REALTIME = 19.949834 sec
+# of samples: 195
+sample every (real) = 0.102307 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.459092 J :: FPGA= 3.514228 J :: Mem= 11.674105 J
+TOTAL E= 24.647425 J
+CLOCK_REALTIME = 19.691285 sec
+# of samples: 193
+sample every (real) = 0.102027 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.538130 J :: FPGA= 3.582654 J :: Mem= 11.770262 J
+TOTAL E= 24.891045 J
+CLOCK_REALTIME = 19.884957 sec
+# of samples: 195
+sample every (real) = 0.101974 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.476873 J :: FPGA= 3.509318 J :: Mem= 11.698698 J
+TOTAL E= 24.684889 J
+CLOCK_REALTIME = 19.730360 sec
+# of samples: 193
+sample every (real) = 0.102230 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.526507 J :: FPGA= 3.556020 J :: Mem= 11.765174 J
+TOTAL E= 24.847701 J
+CLOCK_REALTIME = 19.829287 sec
+# of samples: 194
+sample every (real) = 0.102213 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.436032 J :: FPGA= 3.542081 J :: Mem= 11.666992 J
+TOTAL E= 24.645105 J
+CLOCK_REALTIME = 19.670461 sec
+# of samples: 192
+sample every (real) = 0.102450 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.434997 J :: FPGA= 3.550006 J :: Mem= 11.667511 J
+TOTAL E= 24.652514 J
+CLOCK_REALTIME = 19.709620 sec
+# of samples: 193
+sample every (real) = 0.102122 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.444695 J :: FPGA= 3.524513 J :: Mem= 11.674251 J
+TOTAL E= 24.643459 J
+CLOCK_REALTIME = 19.704852 sec
+# of samples: 193
+sample every (real) = 0.102098 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.424205 J :: FPGA= 3.538258 J :: Mem= 11.632058 J
+TOTAL E= 24.594521 J
+CLOCK_REALTIME = 19.671235 sec
+# of samples: 192
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.441351 J :: FPGA= 3.544726 J :: Mem= 11.705955 J
+TOTAL E= 24.692031 J
+CLOCK_REALTIME = 19.778616 sec
+# of samples: 194
+sample every (real) = 0.101952 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.594061 J :: FPGA= 3.564037 J :: Mem= 11.873191 J
+TOTAL E= 25.031289 J
+CLOCK_REALTIME = 20.044410 sec
+# of samples: 196
+sample every (real) = 0.102267 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.564775 J :: FPGA= 3.524805 J :: Mem= 11.772552 J
+TOTAL E= 24.862131 J
+CLOCK_REALTIME = 19.872308 sec
+# of samples: 194
+sample every (real) = 0.102435 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.449968 J :: FPGA= 3.558243 J :: Mem= 11.722904 J
+TOTAL E= 24.731114 J
+CLOCK_REALTIME = 19.766075 sec
+# of samples: 193
+sample every (real) = 0.102415 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.435875 J :: FPGA= 3.565583 J :: Mem= 11.736413 J
+TOTAL E= 24.737870 J
+CLOCK_REALTIME = 19.724930 sec
+# of samples: 193
+sample every (real) = 0.102202 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.442589 J :: FPGA= 3.524692 J :: Mem= 11.699710 J
+TOTAL E= 24.666991 J
+CLOCK_REALTIME = 19.697682 sec
+# of samples: 193
+sample every (real) = 0.102061 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.530395 J :: FPGA= 3.508270 J :: Mem= 11.733237 J
+TOTAL E= 24.771902 J
+CLOCK_REALTIME = 19.792827 sec
+# of samples: 194
+sample every (real) = 0.102025 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.522631 J :: FPGA= 3.571909 J :: Mem= 11.869583 J
+TOTAL E= 24.964123 J
+CLOCK_REALTIME = 19.971147 sec
+# of samples: 195
+sample every (real) = 0.102416 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.517526 J :: FPGA= 3.578357 J :: Mem= 11.880750 J
+TOTAL E= 24.976633 J
+CLOCK_REALTIME = 20.011660 sec
+# of samples: 196
+sample every (real) = 0.102100 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.437476 J :: FPGA= 3.568121 J :: Mem= 11.843270 J
+TOTAL E= 24.848867 J
+CLOCK_REALTIME = 19.921686 sec
+# of samples: 195
+sample every (real) = 0.102162 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 1688.620311 J :: FPGA= 3.564959 J :: Mem= 11.722217 J
+TOTAL E= 1703.907487 J
+CLOCK_REALTIME = 19.808238 sec
+# of samples: 193
+sample every (real) = 0.102633 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.549511 J :: FPGA= 3.575372 J :: Mem= 11.870069 J
+TOTAL E= 24.994951 J
+CLOCK_REALTIME = 20.008836 sec
+# of samples: 196
+sample every (real) = 0.102086 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.535575 J :: FPGA= 3.566043 J :: Mem= 11.951714 J
+TOTAL E= 25.053333 J
+CLOCK_REALTIME = 20.055098 sec
+# of samples: 196
+sample every (real) = 0.102322 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.737521 J :: FPGA= 3.605422 J :: Mem= 11.986831 J
+TOTAL E= 25.329774 J
+CLOCK_REALTIME = 20.256648 sec
+# of samples: 198
+sample every (real) = 0.102306 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.671714 J :: FPGA= 3.601447 J :: Mem= 12.025496 J
+TOTAL E= 25.298656 J
+CLOCK_REALTIME = 20.205456 sec
+# of samples: 198
+sample every (real) = 0.102048 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.472423 J :: FPGA= 3.563766 J :: Mem= 11.873218 J
+TOTAL E= 24.909406 J
+CLOCK_REALTIME = 19.897501 sec
+# of samples: 195
+sample every (real) = 0.102038 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.544053 J :: FPGA= 3.634207 J :: Mem= 12.121739 J
+TOTAL E= 25.299998 J
+CLOCK_REALTIME = 20.280994 sec
+# of samples: 198
+sample every (real) = 0.102429 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.455544 J :: FPGA= 3.565912 J :: Mem= 11.865944 J
+TOTAL E= 24.887400 J
+CLOCK_REALTIME = 20.018393 sec
+# of samples: 196
+sample every (real) = 0.102135 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.446506 J :: FPGA= 3.636921 J :: Mem= 12.100802 J
+TOTAL E= 25.184229 J
+CLOCK_REALTIME = 20.285577 sec
+# of samples: 198
+sample every (real) = 0.102452 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.439196 J :: FPGA= 3.613463 J :: Mem= 12.010762 J
+TOTAL E= 25.063421 J
+CLOCK_REALTIME = 20.117591 sec
+# of samples: 197
+sample every (real) = 0.102120 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.463670 J :: FPGA= 3.625594 J :: Mem= 12.050959 J
+TOTAL E= 25.140223 J
+CLOCK_REALTIME = 20.198101 sec
+# of samples: 198
+sample every (real) = 0.102011 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
+blocking test -----------------------------------------
+Wed Jun 8 10:24:48 UTC 2016
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.381303 J :: FPGA= 3.611187 J :: Mem= 12.008467 J
+TOTAL E= 25.000957 J
+CLOCK_REALTIME = 20.098414 sec
+# of samples: 197
+sample every (real) = 0.102022 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.617228 J :: FPGA= 3.576305 J :: Mem= 12.011260 J
+TOTAL E= 25.204793 J
+CLOCK_REALTIME = 20.228242 sec
+# of samples: 198
+sample every (real) = 0.102163 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.421719 J :: FPGA= 3.615767 J :: Mem= 12.030807 J
+TOTAL E= 25.068293 J
+CLOCK_REALTIME = 20.140523 sec
+# of samples: 197
+sample every (real) = 0.102236 sec
+sample every: 0.100000 sec
+blocking test -----------------------------------------
+Wed Jun 8 10:28:03 UTC 2016
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.456475 J :: FPGA= 3.560317 J :: Mem= 12.000904 J
+TOTAL E= 25.017695 J
+CLOCK_REALTIME = 20.150301 sec
+# of samples: 197
+sample every (real) = 0.102286 sec
+sample every: 0.100000 sec
+blocking test -----------------------------------------
+Wed Jun 8 10:28:37 UTC 2016
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.475805 J :: FPGA= 3.610672 J :: Mem= 12.017023 J
+TOTAL E= 25.103500 J
+CLOCK_REALTIME = 20.171662 sec
+# of samples: 197
+sample every (real) = 0.102394 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.547703 J :: FPGA= 3.625934 J :: Mem= 12.079738 J
+TOTAL E= 25.253375 J
+CLOCK_REALTIME = 20.265583 sec
+# of samples: 198
+sample every (real) = 0.102351 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 114.849349 J :: FPGA= 3.606353 J :: Mem= 11.931096 J
+TOTAL E= 130.386798 J
+CLOCK_REALTIME = 20.063859 sec
+# of samples: 196
+sample every (real) = 0.102367 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.429075 J :: FPGA= 3.577565 J :: Mem= 11.927892 J
+TOTAL E= 24.934532 J
+CLOCK_REALTIME = 20.024278 sec
+# of samples: 196
+sample every (real) = 0.102165 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.455857 J :: FPGA= 3.665967 J :: Mem= 12.040369 J
+TOTAL E= 25.162192 J
+CLOCK_REALTIME = 20.231179 sec
+# of samples: 198
+sample every (real) = 0.102178 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.449597 J :: FPGA= 3.640934 J :: Mem= 12.045908 J
+TOTAL E= 25.136439 J
+CLOCK_REALTIME = 20.204893 sec
+# of samples: 198
+sample every (real) = 0.102045 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.430177 J :: FPGA= 3.629026 J :: Mem= 11.892280 J
+TOTAL E= 24.951483 J
+CLOCK_REALTIME = 19.952870 sec
+# of samples: 195
+sample every (real) = 0.102322 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.625002 J :: FPGA= 3.607093 J :: Mem= 12.013630 J
+TOTAL E= 25.245725 J
+CLOCK_REALTIME = 20.212880 sec
+# of samples: 198
+sample every (real) = 0.102085 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.502864 J :: FPGA= 3.696422 J :: Mem= 12.199476 J
+TOTAL E= 25.398762 J
+CLOCK_REALTIME = 20.371880 sec
+# of samples: 199
+sample every (real) = 0.102371 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.492137 J :: FPGA= 3.669315 J :: Mem= 12.133100 J
+TOTAL E= 25.294551 J
+CLOCK_REALTIME = 20.225389 sec
+# of samples: 198
+sample every (real) = 0.102148 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.495268 J :: FPGA= 3.682169 J :: Mem= 12.221672 J
+TOTAL E= 25.399108 J
+CLOCK_REALTIME = 20.455410 sec
+# of samples: 200
+sample every (real) = 0.102277 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.473362 J :: FPGA= 3.627984 J :: Mem= 12.093722 J
+TOTAL E= 25.195069 J
+CLOCK_REALTIME = 20.310889 sec
+# of samples: 199
+sample every (real) = 0.102065 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.458266 J :: FPGA= 3.685123 J :: Mem= 12.207442 J
+TOTAL E= 25.350831 J
+CLOCK_REALTIME = 20.406975 sec
+# of samples: 200
+sample every (real) = 0.102035 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.428751 J :: FPGA= 3.670790 J :: Mem= 12.136786 J
+TOTAL E= 25.236326 J
+CLOCK_REALTIME = 20.322938 sec
+# of samples: 199
+sample every (real) = 0.102125 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.516953 J :: FPGA= 3.688239 J :: Mem= 12.126003 J
+TOTAL E= 25.331195 J
+CLOCK_REALTIME = 20.312601 sec
+# of samples: 199
+sample every (real) = 0.102073 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.481979 J :: FPGA= 3.630441 J :: Mem= 12.102989 J
+TOTAL E= 25.215410 J
+CLOCK_REALTIME = 20.261792 sec
+# of samples: 198
+sample every (real) = 0.102332 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 114.758662 J :: FPGA= 3.738069 J :: Mem= 12.341939 J
+TOTAL E= 130.838670 J
+CLOCK_REALTIME = 20.602657 sec
+# of samples: 201
+sample every (real) = 0.102501 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.468745 J :: FPGA= 3.708088 J :: Mem= 12.260856 J
+TOTAL E= 25.437689 J
+CLOCK_REALTIME = 20.593449 sec
+# of samples: 202
+sample every (real) = 0.101948 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.528315 J :: FPGA= 3.765644 J :: Mem= 12.318704 J
+TOTAL E= 25.612664 J
+CLOCK_REALTIME = 20.600464 sec
+# of samples: 202
+sample every (real) = 0.101982 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.557798 J :: FPGA= 3.713444 J :: Mem= 12.316263 J
+TOTAL E= 25.587505 J
+CLOCK_REALTIME = 20.604247 sec
+# of samples: 202
+sample every (real) = 0.102001 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.479028 J :: FPGA= 3.742207 J :: Mem= 12.304017 J
+TOTAL E= 25.525253 J
+CLOCK_REALTIME = 20.593092 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.447000 J :: FPGA= 3.739482 J :: Mem= 12.300348 J
+TOTAL E= 25.486830 J
+CLOCK_REALTIME = 20.593145 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.484714 J :: FPGA= 3.699638 J :: Mem= 12.323526 J
+TOTAL E= 25.507879 J
+CLOCK_REALTIME = 20.593481 sec
+# of samples: 201
+sample every (real) = 0.102455 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 9.500475 J :: FPGA= 3.709468 J :: Mem= 12.281624 J
+TOTAL E= 25.491568 J
+CLOCK_REALTIME = 20.592953 sec
+# of samples: 201
+sample every (real) = 0.102453 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.597175 J :: FPGA= 1691.451341 J :: Mem= 68.262281 J
+TOTAL E= 1807.310797 J
+CLOCK_REALTIME = 114.432246 sec
+# of samples: 1116
+sample every (real) = 0.102538 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.406926 J :: FPGA= 11.301885 J :: Mem= 68.698904 J
+TOTAL E= 127.407716 J
+CLOCK_REALTIME = 114.844905 sec
+# of samples: 1121
+sample every (real) = 0.102449 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 48.670042 J :: FPGA= 117.459521 J :: Mem= 227.034175 J
+TOTAL E= 393.163737 J
+CLOCK_REALTIME = 114.520681 sec
+# of samples: 1117
+sample every (real) = 0.102525 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.756261 J :: FPGA= 11.218185 J :: Mem= 67.799991 J
+TOTAL E= 126.774437 J
+CLOCK_REALTIME = 113.711839 sec
+# of samples: 1110
+sample every (real) = 0.102443 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.400432 J :: FPGA= 11.457647 J :: Mem= 1748.643752 J
+TOTAL E= 1807.501832 J
+CLOCK_REALTIME = 114.849985 sec
+# of samples: 1120
+sample every (real) = 0.102545 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.751747 J :: FPGA= 11.285555 J :: Mem= 67.764115 J
+TOTAL E= 126.801417 J
+CLOCK_REALTIME = 113.654894 sec
+# of samples: 1109
+sample every (real) = 0.102484 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.921974 J :: FPGA= 117.548120 J :: Mem= 67.732403 J
+TOTAL E= 233.202497 J
+CLOCK_REALTIME = 113.668932 sec
+# of samples: 1109
+sample every (real) = 0.102497 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 48.678976 J :: FPGA= 117.462835 J :: Mem= 67.873151 J
+TOTAL E= 234.014962 J
+CLOCK_REALTIME = 113.722221 sec
+# of samples: 1110
+sample every (real) = 0.102452 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.493976 J :: FPGA= 11.303769 J :: Mem= 226.694654 J
+TOTAL E= 285.492399 J
+CLOCK_REALTIME = 114.562377 sec
+# of samples: 1118
+sample every (real) = 0.102471 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.359363 J :: FPGA= 11.278948 J :: Mem= 68.709590 J
+TOTAL E= 127.347901 J
+CLOCK_REALTIME = 114.795428 sec
+# of samples: 1120
+sample every (real) = 0.102496 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.811824 J :: FPGA= 11.214892 J :: Mem= 225.981175 J
+TOTAL E= 285.007890 J
+CLOCK_REALTIME = 113.621894 sec
+# of samples: 1109
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 1831.589328 J :: FPGA= 11.388282 J :: Mem= 67.788649 J
+TOTAL E= 1910.766259 J
+CLOCK_REALTIME = 113.597209 sec
+# of samples: 1108
+sample every (real) = 0.102525 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.712696 J :: FPGA= 11.183179 J :: Mem= 67.747584 J
+TOTAL E= 126.643459 J
+CLOCK_REALTIME = 113.626816 sec
+# of samples: 1109
+sample every (real) = 0.102459 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.493850 J :: FPGA= 11.365392 J :: Mem= 68.623390 J
+TOTAL E= 127.482633 J
+CLOCK_REALTIME = 114.803135 sec
+# of samples: 1120
+sample every (real) = 0.102503 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.723812 J :: FPGA= 11.222776 J :: Mem= 67.691428 J
+TOTAL E= 126.638016 J
+CLOCK_REALTIME = 113.627355 sec
+# of samples: 1109
+sample every (real) = 0.102459 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.748738 J :: FPGA= 11.242363 J :: Mem= 68.206266 J
+TOTAL E= 127.197367 J
+CLOCK_REALTIME = 113.606683 sec
+# of samples: 1109
+sample every (real) = 0.102441 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.512446 J :: FPGA= 11.393256 J :: Mem= 227.448659 J
+TOTAL E= 286.354361 J
+CLOCK_REALTIME = 114.786205 sec
+# of samples: 1120
+sample every (real) = 0.102488 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 152.830044 J :: FPGA= 117.506996 J :: Mem= 68.720618 J
+TOTAL E= 339.057658 J
+CLOCK_REALTIME = 114.789177 sec
+# of samples: 1120
+sample every (real) = 0.102490 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.733262 J :: FPGA= 11.232694 J :: Mem= 67.701292 J
+TOTAL E= 126.667249 J
+CLOCK_REALTIME = 113.570551 sec
+# of samples: 1108
+sample every (real) = 0.102500 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.800707 J :: FPGA= 11.240346 J :: Mem= 67.785642 J
+TOTAL E= 126.826695 J
+CLOCK_REALTIME = 113.594383 sec
+# of samples: 1109
+sample every (real) = 0.102430 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.793313 J :: FPGA= 11.235065 J :: Mem= 67.645666 J
+TOTAL E= 126.674044 J
+CLOCK_REALTIME = 113.583990 sec
+# of samples: 1109
+sample every (real) = 0.102420 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.528432 J :: FPGA= 11.337953 J :: Mem= 68.613034 J
+TOTAL E= 127.479418 J
+CLOCK_REALTIME = 114.783296 sec
+# of samples: 1120
+sample every (real) = 0.102485 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.761817 J :: FPGA= 11.244766 J :: Mem= 67.541070 J
+TOTAL E= 126.547653 J
+CLOCK_REALTIME = 113.584140 sec
+# of samples: 1109
+sample every (real) = 0.102420 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.540851 J :: FPGA= 117.295720 J :: Mem= 68.756009 J
+TOTAL E= 233.592580 J
+CLOCK_REALTIME = 114.771124 sec
+# of samples: 1120
+sample every (real) = 0.102474 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.457800 J :: FPGA= 11.318625 J :: Mem= 68.610041 J
+TOTAL E= 127.386466 J
+CLOCK_REALTIME = 114.776955 sec
+# of samples: 1120
+sample every (real) = 0.102479 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.410094 J :: FPGA= 11.384416 J :: Mem= 68.501020 J
+TOTAL E= 127.295531 J
+CLOCK_REALTIME = 114.736840 sec
+# of samples: 1120
+sample every (real) = 0.102444 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.531776 J :: FPGA= 11.356969 J :: Mem= 68.431215 J
+TOTAL E= 127.319960 J
+CLOCK_REALTIME = 114.760929 sec
+# of samples: 1120
+sample every (real) = 0.102465 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.497260 J :: FPGA= 11.323239 J :: Mem= 68.629019 J
+TOTAL E= 127.449518 J
+CLOCK_REALTIME = 114.755054 sec
+# of samples: 1120
+sample every (real) = 0.102460 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.464611 J :: FPGA= 11.318445 J :: Mem= 68.542434 J
+TOTAL E= 127.325490 J
+CLOCK_REALTIME = 114.748342 sec
+# of samples: 1120
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.503093 J :: FPGA= 11.362169 J :: Mem= 68.731271 J
+TOTAL E= 127.596534 J
+CLOCK_REALTIME = 114.759501 sec
+# of samples: 1120
+sample every (real) = 0.102464 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.527495 J :: FPGA= 11.395648 J :: Mem= 68.615495 J
+TOTAL E= 127.538639 J
+CLOCK_REALTIME = 114.759093 sec
+# of samples: 1120
+sample every (real) = 0.102463 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.906362 J :: FPGA= 11.300247 J :: Mem= 67.553875 J
+TOTAL E= 126.760484 J
+CLOCK_REALTIME = 113.578667 sec
+# of samples: 1109
+sample every (real) = 0.102415 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 1724.142981 J :: FPGA= 11.432105 J :: Mem= 228.041118 J
+TOTAL E= 1963.616205 J
+CLOCK_REALTIME = 114.742809 sec
+# of samples: 1119
+sample every (real) = 0.102540 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.610546 J :: FPGA= 11.357641 J :: Mem= 68.641232 J
+TOTAL E= 127.609419 J
+CLOCK_REALTIME = 114.750251 sec
+# of samples: 1120
+sample every (real) = 0.102456 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.827529 J :: FPGA= 11.308072 J :: Mem= 67.635888 J
+TOTAL E= 126.771489 J
+CLOCK_REALTIME = 113.545993 sec
+# of samples: 1108
+sample every (real) = 0.102478 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 1724.376262 J :: FPGA= 11.287951 J :: Mem= 67.664949 J
+TOTAL E= 1803.329162 J
+CLOCK_REALTIME = 113.554900 sec
+# of samples: 1108
+sample every (real) = 0.102486 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.589958 J :: FPGA= 11.393141 J :: Mem= 68.621901 J
+TOTAL E= 127.605000 J
+CLOCK_REALTIME = 114.756566 sec
+# of samples: 1120
+sample every (real) = 0.102461 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.738287 J :: FPGA= 11.287453 J :: Mem= 67.467327 J
+TOTAL E= 126.493067 J
+CLOCK_REALTIME = 113.538024 sec
+# of samples: 1108
+sample every (real) = 0.102471 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.817780 J :: FPGA= 11.318009 J :: Mem= 67.543874 J
+TOTAL E= 126.679662 J
+CLOCK_REALTIME = 113.560724 sec
+# of samples: 1108
+sample every (real) = 0.102492 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.769041 J :: FPGA= 11.262905 J :: Mem= 67.644763 J
+TOTAL E= 126.676708 J
+CLOCK_REALTIME = 113.549995 sec
+# of samples: 1108
+sample every (real) = 0.102482 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.467854 J :: FPGA= 11.373688 J :: Mem= 68.663783 J
+TOTAL E= 127.505326 J
+CLOCK_REALTIME = 114.750388 sec
+# of samples: 1120
+sample every (real) = 0.102456 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 48.712454 J :: FPGA= 117.375582 J :: Mem= 67.531598 J
+TOTAL E= 233.619635 J
+CLOCK_REALTIME = 113.552427 sec
+# of samples: 1108
+sample every (real) = 0.102484 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.712992 J :: FPGA= 11.327501 J :: Mem= 67.626861 J
+TOTAL E= 126.667354 J
+CLOCK_REALTIME = 113.519779 sec
+# of samples: 1108
+sample every (real) = 0.102455 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.849219 J :: FPGA= 11.292267 J :: Mem= 67.603739 J
+TOTAL E= 126.745225 J
+CLOCK_REALTIME = 113.545118 sec
+# of samples: 1108
+sample every (real) = 0.102478 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.480273 J :: FPGA= 11.411939 J :: Mem= 68.620410 J
+TOTAL E= 127.512622 J
+CLOCK_REALTIME = 114.742524 sec
+# of samples: 1120
+sample every (real) = 0.102449 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.497796 J :: FPGA= 11.376052 J :: Mem= 68.576393 J
+TOTAL E= 127.450241 J
+CLOCK_REALTIME = 114.734610 sec
+# of samples: 1120
+sample every (real) = 0.102442 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.768444 J :: FPGA= 11.280175 J :: Mem= 67.659923 J
+TOTAL E= 126.708542 J
+CLOCK_REALTIME = 113.554333 sec
+# of samples: 1108
+sample every (real) = 0.102486 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.801306 J :: FPGA= 11.312171 J :: Mem= 67.675275 J
+TOTAL E= 126.788752 J
+CLOCK_REALTIME = 113.556565 sec
+# of samples: 1108
+sample every (real) = 0.102488 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 1 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.843969 J :: FPGA= 11.306253 J :: Mem= 68.174529 J
+TOTAL E= 127.324751 J
+CLOCK_REALTIME = 113.567150 sec
+# of samples: 1108
+sample every (real) = 0.102497 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 2 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.518629 J :: FPGA= 11.385554 J :: Mem= 68.582811 J
+TOTAL E= 127.486993 J
+CLOCK_REALTIME = 114.748859 sec
+# of samples: 1120
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 3 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.744115 J :: FPGA= 11.226356 J :: Mem= 67.540749 J
+TOTAL E= 126.511220 J
+CLOCK_REALTIME = 113.533433 sec
+# of samples: 1108
+sample every (real) = 0.102467 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 4 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.518888 J :: FPGA= 11.393308 J :: Mem= 68.620838 J
+TOTAL E= 127.533035 J
+CLOCK_REALTIME = 114.741540 sec
+# of samples: 1120
+sample every (real) = 0.102448 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 5 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.823035 J :: FPGA= 11.426950 J :: Mem= 67.510642 J
+TOTAL E= 126.760627 J
+CLOCK_REALTIME = 113.549216 sec
+# of samples: 1108
+sample every (real) = 0.102481 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 6 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.553604 J :: FPGA= 11.351378 J :: Mem= 227.844427 J
+TOTAL E= 286.749409 J
+CLOCK_REALTIME = 114.747324 sec
+# of samples: 1119
+sample every (real) = 0.102545 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 7 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 47.399441 J :: FPGA= 11.343894 J :: Mem= 68.611199 J
+TOTAL E= 127.354534 J
+CLOCK_REALTIME = 114.739125 sec
+# of samples: 1120
+sample every (real) = 0.102446 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 1 rep: 8 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 152.821741 J :: FPGA= 11.498628 J :: Mem= 226.982437 J
+TOTAL E= 391.302807 J
+CLOCK_REALTIME = 114.724052 sec
+# of samples: 1119
+sample every (real) = 0.102524 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.709362 J :: FPGA= 5.666685 J :: Mem= 33.837279 J
+TOTAL E= 67.213326 J
+CLOCK_REALTIME = 56.822022 sec
+# of samples: 555
+sample every (real) = 0.102382 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.705718 J :: FPGA= 5.658343 J :: Mem= 33.819139 J
+TOTAL E= 67.183201 J
+CLOCK_REALTIME = 56.805191 sec
+# of samples: 555
+sample every (real) = 0.102352 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.704554 J :: FPGA= 5.685536 J :: Mem= 33.738160 J
+TOTAL E= 67.128249 J
+CLOCK_REALTIME = 56.811414 sec
+# of samples: 555
+sample every (real) = 0.102363 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.692566 J :: FPGA= 5.644596 J :: Mem= 33.760567 J
+TOTAL E= 67.097729 J
+CLOCK_REALTIME = 56.802355 sec
+# of samples: 555
+sample every (real) = 0.102347 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.698051 J :: FPGA= 5.682813 J :: Mem= 33.781087 J
+TOTAL E= 67.161951 J
+CLOCK_REALTIME = 56.800070 sec
+# of samples: 555
+sample every (real) = 0.102342 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.745496 J :: FPGA= 5.710131 J :: Mem= 33.840705 J
+TOTAL E= 67.296333 J
+CLOCK_REALTIME = 56.815976 sec
+# of samples: 555
+sample every (real) = 0.102371 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.794676 J :: FPGA= 5.712663 J :: Mem= 33.862607 J
+TOTAL E= 67.369947 J
+CLOCK_REALTIME = 56.813346 sec
+# of samples: 555
+sample every (real) = 0.102366 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 128
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.713669 J :: FPGA= 5.648530 J :: Mem= 33.758569 J
+TOTAL E= 67.120768 J
+CLOCK_REALTIME = 56.806851 sec
+# of samples: 555
+sample every (real) = 0.102355 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.709529 J :: FPGA= 5.630149 J :: Mem= 33.868949 J
+TOTAL E= 67.208627 J
+CLOCK_REALTIME = 56.759520 sec
+# of samples: 554
+sample every (real) = 0.102454 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 1706.225563 J :: FPGA= 5.663801 J :: Mem= 33.763163 J
+TOTAL E= 1745.652528 J
+CLOCK_REALTIME = 56.773412 sec
+# of samples: 554
+sample every (real) = 0.102479 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 28.438135 J :: FPGA= 5.587546 J :: Mem= 33.861436 J
+TOTAL E= 67.887117 J
+CLOCK_REALTIME = 56.764924 sec
+# of samples: 554
+sample every (real) = 0.102464 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.685427 J :: FPGA= 5.646636 J :: Mem= 33.814688 J
+TOTAL E= 67.146751 J
+CLOCK_REALTIME = 56.765306 sec
+# of samples: 554
+sample every (real) = 0.102464 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.692145 J :: FPGA= 5.621238 J :: Mem= 33.770720 J
+TOTAL E= 67.084103 J
+CLOCK_REALTIME = 56.768921 sec
+# of samples: 554
+sample every (real) = 0.102471 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.758880 J :: FPGA= 5.694376 J :: Mem= 33.775535 J
+TOTAL E= 67.228791 J
+CLOCK_REALTIME = 56.773326 sec
+# of samples: 555
+sample every (real) = 0.102294 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.733293 J :: FPGA= 5.668788 J :: Mem= 33.795897 J
+TOTAL E= 67.197978 J
+CLOCK_REALTIME = 56.777391 sec
+# of samples: 555
+sample every (real) = 0.102302 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 256
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.707932 J :: FPGA= 5.719564 J :: Mem= 33.824692 J
+TOTAL E= 67.252188 J
+CLOCK_REALTIME = 56.764856 sec
+# of samples: 554
+sample every (real) = 0.102464 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.698436 J :: FPGA= 5.637902 J :: Mem= 33.805907 J
+TOTAL E= 67.142245 J
+CLOCK_REALTIME = 56.746730 sec
+# of samples: 554
+sample every (real) = 0.102431 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.688970 J :: FPGA= 5.640544 J :: Mem= 33.793470 J
+TOTAL E= 67.122983 J
+CLOCK_REALTIME = 56.752312 sec
+# of samples: 554
+sample every (real) = 0.102441 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.738432 J :: FPGA= 5.696548 J :: Mem= 33.764442 J
+TOTAL E= 67.199423 J
+CLOCK_REALTIME = 56.747993 sec
+# of samples: 554
+sample every (real) = 0.102433 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.710710 J :: FPGA= 5.681006 J :: Mem= 33.884956 J
+TOTAL E= 67.276672 J
+CLOCK_REALTIME = 56.745583 sec
+# of samples: 554
+sample every (real) = 0.102429 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.692328 J :: FPGA= 5.670662 J :: Mem= 33.689532 J
+TOTAL E= 67.052521 J
+CLOCK_REALTIME = 56.747486 sec
+# of samples: 554
+sample every (real) = 0.102432 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.718910 J :: FPGA= 5.711604 J :: Mem= 33.854728 J
+TOTAL E= 67.285242 J
+CLOCK_REALTIME = 56.751253 sec
+# of samples: 554
+sample every (real) = 0.102439 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 28.505351 J :: FPGA= 5.702506 J :: Mem= 33.773100 J
+TOTAL E= 67.980957 J
+CLOCK_REALTIME = 56.743242 sec
+# of samples: 554
+sample every (real) = 0.102425 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 512
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.721853 J :: FPGA= 5.652714 J :: Mem= 33.726992 J
+TOTAL E= 67.101558 J
+CLOCK_REALTIME = 56.745203 sec
+# of samples: 554
+sample every (real) = 0.102428 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.732755 J :: FPGA= 5.621869 J :: Mem= 33.761819 J
+TOTAL E= 67.116442 J
+CLOCK_REALTIME = 56.728766 sec
+# of samples: 554
+sample every (real) = 0.102398 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.723556 J :: FPGA= 5.684018 J :: Mem= 33.816699 J
+TOTAL E= 67.224273 J
+CLOCK_REALTIME = 56.734151 sec
+# of samples: 554
+sample every (real) = 0.102408 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 1809.200889 J :: FPGA= 5.721321 J :: Mem= 192.764814 J
+TOTAL E= 2007.687024 J
+CLOCK_REALTIME = 56.726656 sec
+# of samples: 553
+sample every (real) = 0.102580 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.779422 J :: FPGA= 5.677837 J :: Mem= 33.822666 J
+TOTAL E= 67.279926 J
+CLOCK_REALTIME = 56.737235 sec
+# of samples: 554
+sample every (real) = 0.102414 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.769383 J :: FPGA= 5.693511 J :: Mem= 33.799801 J
+TOTAL E= 67.262694 J
+CLOCK_REALTIME = 56.730410 sec
+# of samples: 554
+sample every (real) = 0.102401 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.762411 J :: FPGA= 5.663864 J :: Mem= 33.845598 J
+TOTAL E= 67.271873 J
+CLOCK_REALTIME = 56.720311 sec
+# of samples: 554
+sample every (real) = 0.102383 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.778401 J :: FPGA= 5.735228 J :: Mem= 33.839611 J
+TOTAL E= 67.353240 J
+CLOCK_REALTIME = 56.738486 sec
+# of samples: 554
+sample every (real) = 0.102416 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 1024
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.764917 J :: FPGA= 5.645134 J :: Mem= 33.766005 J
+TOTAL E= 67.176056 J
+CLOCK_REALTIME = 56.731795 sec
+# of samples: 554
+sample every (real) = 0.102404 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.733941 J :: FPGA= 5.653390 J :: Mem= 33.761632 J
+TOTAL E= 67.148962 J
+CLOCK_REALTIME = 56.726683 sec
+# of samples: 554
+sample every (real) = 0.102395 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.715069 J :: FPGA= 5.690282 J :: Mem= 33.875297 J
+TOTAL E= 67.280649 J
+CLOCK_REALTIME = 56.723427 sec
+# of samples: 554
+sample every (real) = 0.102389 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.685209 J :: FPGA= 5.678523 J :: Mem= 33.838001 J
+TOTAL E= 67.201732 J
+CLOCK_REALTIME = 56.721502 sec
+# of samples: 554
+sample every (real) = 0.102385 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.769957 J :: FPGA= 5.738981 J :: Mem= 33.728299 J
+TOTAL E= 67.237238 J
+CLOCK_REALTIME = 56.734759 sec
+# of samples: 554
+sample every (real) = 0.102409 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.774201 J :: FPGA= 5.705231 J :: Mem= 33.750215 J
+TOTAL E= 67.229648 J
+CLOCK_REALTIME = 56.731316 sec
+# of samples: 554
+sample every (real) = 0.102403 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.739902 J :: FPGA= 5.672580 J :: Mem= 33.739026 J
+TOTAL E= 67.151509 J
+CLOCK_REALTIME = 56.715692 sec
+# of samples: 554
+sample every (real) = 0.102375 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.797196 J :: FPGA= 5.658615 J :: Mem= 33.767449 J
+TOTAL E= 67.223260 J
+CLOCK_REALTIME = 56.736308 sec
+# of samples: 554
+sample every (real) = 0.102412 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 2048
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.774327 J :: FPGA= 5.739985 J :: Mem= 33.827883 J
+TOTAL E= 67.342195 J
+CLOCK_REALTIME = 56.732807 sec
+# of samples: 554
+sample every (real) = 0.102406 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.675481 J :: FPGA= 5.732646 J :: Mem= 33.760798 J
+TOTAL E= 67.168926 J
+CLOCK_REALTIME = 56.714203 sec
+# of samples: 554
+sample every (real) = 0.102372 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.837148 J :: FPGA= 5.712649 J :: Mem= 33.669890 J
+TOTAL E= 67.219687 J
+CLOCK_REALTIME = 56.717683 sec
+# of samples: 554
+sample every (real) = 0.102378 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.820523 J :: FPGA= 5.705722 J :: Mem= 33.721633 J
+TOTAL E= 67.247878 J
+CLOCK_REALTIME = 56.740841 sec
+# of samples: 554
+sample every (real) = 0.102420 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.776261 J :: FPGA= 5.641877 J :: Mem= 33.743094 J
+TOTAL E= 67.161232 J
+CLOCK_REALTIME = 56.722683 sec
+# of samples: 554
+sample every (real) = 0.102388 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.751309 J :: FPGA= 5.747942 J :: Mem= 33.843842 J
+TOTAL E= 67.343093 J
+CLOCK_REALTIME = 56.721978 sec
+# of samples: 554
+sample every (real) = 0.102386 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.764008 J :: FPGA= 5.739975 J :: Mem= 33.760417 J
+TOTAL E= 67.264400 J
+CLOCK_REALTIME = 56.731465 sec
+# of samples: 554
+sample every (real) = 0.102403 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.781882 J :: FPGA= 5.703576 J :: Mem= 33.909149 J
+TOTAL E= 67.394607 J
+CLOCK_REALTIME = 56.724478 sec
+# of samples: 554
+sample every (real) = 0.102391 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 4096
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.783467 J :: FPGA= 5.755508 J :: Mem= 33.683898 J
+TOTAL E= 67.222874 J
+CLOCK_REALTIME = 56.720197 sec
+# of samples: 554
+sample every (real) = 0.102383 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 1 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.815480 J :: FPGA= 5.754401 J :: Mem= 33.800722 J
+TOTAL E= 67.370603 J
+CLOCK_REALTIME = 56.731172 sec
+# of samples: 554
+sample every (real) = 0.102403 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 2 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.754443 J :: FPGA= 5.769452 J :: Mem= 33.691827 J
+TOTAL E= 67.215723 J
+CLOCK_REALTIME = 56.721876 sec
+# of samples: 554
+sample every (real) = 0.102386 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 3 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 28.757282 J :: FPGA= 111.932445 J :: Mem= 33.724416 J
+TOTAL E= 174.414144 J
+CLOCK_REALTIME = 56.722124 sec
+# of samples: 554
+sample every (real) = 0.102387 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 4 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.813666 J :: FPGA= 5.751629 J :: Mem= 33.811290 J
+TOTAL E= 67.376585 J
+CLOCK_REALTIME = 56.729880 sec
+# of samples: 554
+sample every (real) = 0.102401 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 5 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.785708 J :: FPGA= 5.694655 J :: Mem= 33.726505 J
+TOTAL E= 67.206868 J
+CLOCK_REALTIME = 56.720677 sec
+# of samples: 554
+sample every (real) = 0.102384 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 6 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.810650 J :: FPGA= 5.773392 J :: Mem= 33.838032 J
+TOTAL E= 67.422075 J
+CLOCK_REALTIME = 56.720326 sec
+# of samples: 554
+sample every (real) = 0.102383 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 7 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.806842 J :: FPGA= 5.744826 J :: Mem= 33.823959 J
+TOTAL E= 67.375627 J
+CLOCK_REALTIME = 56.721764 sec
+# of samples: 554
+sample every (real) = 0.102386 sec
+sample every: 0.100000 sec
+-------------------------------------
+./NBODY_DS 2 rep: 8 blk: 8192
+-------------------------------------
+START
+ -----> Nbodies : 10000
++--------------------+
+| POWER MEASUREMENTS |
++--------------------+
+CPU= 27.776882 J :: FPGA= 5.795996 J :: Mem= 33.856138 J
+TOTAL E= 67.429016 J
+CLOCK_REALTIME = 56.751576 sec
+# of samples: 554
+sample every (real) = 0.102440 sec
+sample every: 0.100000 sec

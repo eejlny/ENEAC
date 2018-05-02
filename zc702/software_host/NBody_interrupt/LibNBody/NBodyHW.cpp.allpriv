@@ -1,0 +1,114 @@
+// calculamos la velocidad y posicion de un cuerpo para un paso de tiempo
+/*
+void toFPGA(OctTreeLeafNode b, int nbodies)
+{
+	OctTreeLeafNode bodybuf[TAMBODIES];
+}
+*/
+
+#include "NBodyHW.h"
+
+int ComputeChunkFPGA(
+bool firstime,
+int nbodies,			
+int step,
+float epssq,
+float dthf,
+int begin, 
+int end,
+float b[NUMBODIES*stsize]) {
+
+	register float ax, ay, az, waccx, waccy, waccz;
+	register float drx, dry, drz, drsq, nphi, scale, idr;
+	float mass[NUMBODIES];
+	float posx[NUMBODIES];
+	float posy[NUMBODIES];
+	float posz[NUMBODIES];
+	float velx[NUMBODIES];
+	float vely[NUMBODIES];
+	float velz[NUMBODIES];
+	float accx[NUMBODIES];
+	float accy[NUMBODIES];
+	float accz[NUMBODIES];
+
+#pragma HLS array_partition variable=mass cyclic factor=16
+#pragma HLS array_partition variable=posx cyclic factor=16
+#pragma HLS array_partition variable=posy cyclic factor=16
+#pragma HLS array_partition variable=posz cyclic factor=16
+#pragma HLS array_partition variable=velx cyclic factor=16
+#pragma HLS array_partition variable=vely cyclic factor=16
+#pragma HLS array_partition variable=velz cyclic factor=16
+#pragma HLS array_partition variable=accx cyclic factor=16
+#pragma HLS array_partition variable=accy cyclic factor=16
+#pragma HLS array_partition variable=accz cyclic factor=16
+
+	if (firstime)
+	{
+		for(int i=0; i<NUMBODIES;i++){
+#pragma HLS PIPELINE II=1
+			mass[i]=b[i*stsize+imass];
+			posx[i]=b[i*stsize+iposx];
+			posy[i]=b[i*stsize+iposy];
+			posz[i]=b[i*stsize+iposz];
+			velx[i]=b[i*stsize+ivelx];
+			vely[i]=b[i*stsize+ively];
+			velz[i]=b[i*stsize+ivelz];
+			accx[i]=b[i*stsize+iaccx];
+			accy[i]=b[i*stsize+iaccy];
+			accz[i]=b[i*stsize+iaccz];
+		}
+	}
+
+	for (int i = begin; i < end; i++) {
+
+		ax = accx[i];
+		ay = accy[i];
+		az = accz[i];
+
+		waccx = 0.0;
+		waccy = 0.0;
+		waccz = 0.0;
+
+		//IterativeForce(b);
+
+		for(int j=0; j < nbodies; j++){
+#pragma HLS PIPELINE II=1
+#pragma HLS unroll factor=32
+#pragma HLS loop_tripcount min=256 max=10000
+
+			drx = posx[j] - posx[i];
+			dry = posy[j] - posy[i];
+			drz = posz[j] - posz[i];
+
+			drsq = drx * drx + dry * dry + drz * drz + epssq;
+			idr = 1 / drsq; //sqrtf(drsq);
+			nphi = mass[j] * idr;
+			scale = nphi * idr * idr;
+
+			waccx += drx * scale;
+			waccy += dry * scale;
+			waccz += drz * scale;
+		}
+
+		accx[i]=waccx;
+		accy[i]=waccy;
+		accz[i]=waccz;
+
+		if (step > 0) {
+			velx[i] += (waccx - ax) * dthf;
+			vely[i] += (waccy - ay) * dthf;
+			velz[i] += (waccz - az) * dthf;
+		}
+	}
+
+	for(int i=begin; i<end;i++){
+#pragma HLS PIPELINE II=1
+			b[i*stsize+ivelx]=velx[i];
+			b[i*stsize+ively]=vely[i];
+			b[i*stsize+ivelz]=velz[i];
+			b[i*stsize+iaccx]=accx[i];
+			b[i*stsize+iaccy]=accy[i];
+			b[i*stsize+iaccz]=accz[i];
+		}
+	return 0;
+}

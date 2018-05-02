@@ -1,0 +1,37 @@
+# Clone u-boot from github.com/xilinx/u-boot-xlnx
+# or http://gitenterprise.xilinx.com/Linux/u-boot-xlnx
+git clone http://gitenterprise.xilinx.com/Linux/u-boot-xlnx
+
+# Checkout commit a38e1e365d2cb11d1886a460af0d312a08d14ce3
+# This is a few bug fixes after the xilinx-v2014.4 tag
+git checkout a38e1e365d2cb11d1886a460af0d312a08d14ce3
+
+# See platform specific instructions below to build u-boot for a specific
+# platform
+
+# For platforms based on zc702 or zc706 boards
+make clean
+make zynq_zc70x_config
+make CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+# This creates u-boot at the top level for all the zc70x boards
+
+# For platforms based on the zed board
+make clean
+make zynq_zed_config
+make CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+# This creates u-boot at the top level for the zed board
+
+# For platforms based on the microzed or microzed_20 boards
+make clean
+make zynq_microzed_config
+make CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+# This creates u-boot at the top level for the microzed or microzed_20 board
+
+# The zybo board is not supported in the main tree so a local patch needs to be
+# applied to add support for zybo based platforms
+make clean
+git am 0001-Local-addition-of-zybo-support.patch
+make zynq_zybo_config
+make CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+# This creates u-boot at the top level for the zybo board
+
