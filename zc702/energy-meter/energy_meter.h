@@ -50,6 +50,7 @@ extern "C" {
     struct em_t
     {
         double eCPU,eFPGA,eMEM; // energy measured in Joules
+	double wCPU,wFPGA,wMEM; // power measured in Watts
     };
 
     /*-------------------------------------------------------------------
@@ -66,12 +67,20 @@ extern "C" {
         double eFPGA;   	// cumulative energy (and final result) in Joules
         double eMEM;  	// cumulative energy (and final result) in Joules
 
+    	double wCPU;   	// average power
+        double wFPGA;   	
+        double wMEM;  	//        s
+
+	double pCPU;   	// idle power
+        double pFPGA;   	
+        double pMEM;  	// 
+
         double cpuW, fpgaW, memW; // last measurement
 
         int destroy;  	// 1 = sampling thread must exit
         int stop;     	//  not in use
 
-        long samples;  	// # of samples
+        int samples;  	// # of samples
 
         struct timespec start_time; // clock_gettime(CLOCK_REALTIME, ...) at starting point
         struct timespec stop_time; 	// clock_gettime(CLOCK_REALTIME, ...) at finish
@@ -121,6 +130,10 @@ extern "C" {
     	printf("CPU total energy measured= %lf Joules\n", sample->CPU );  // energy is in Joules
 
     */
+   void power_meter_idle(struct energy_sample *sample);
+   
+   /*measure idle values of power to remove them later from energy calculations*/
+
     void energy_meter_stop(struct energy_sample *sample);
 
     /*-------------------------------------------------------------------

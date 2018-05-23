@@ -1,0 +1,11 @@
+Implementation of the applications introduced in the article "Simultaneous multiprocessing in a software-defined heterogeneous FPGA"
+
+The source codes of the benchmarks for our article at the url https://doi.org/10.1007/s11227-018-2367-9 are provided here. The four benchmarks are AES (Advanced Encryption Standard), HotSpot, GEMM (General matrix multiplication), and Nbody. Every benchmark is implemented on a zc702 board using either Dynamic or LogFit scheduler, and with or without the interrupt mechanism. AES and Hotspot are implemented with 1 and 2 FPGA cores (1FC or 2FC).
+
+The source codes are provided in multiple directories whose names indicate the type of implementation: the algorithm (AES, HotSpot, GEMM, Nbody), hardware accelerator vs. host software, interrupt vs. no interrupt, and 1FC vs. 2FC (The number of hardware cores for AES and HotSpot).
+
+To run an application, the following steps should be taken:
+1) The source files for the accelerator generation of an application and also the interrupt-enabled platform (directory "platform/zc702_led") should be placed in a Linux machine. If the hardware is interrupt-based, the PLATFORM in Makefile should be edited to point to the /platform/zc702_led provided, otherwise the default zc702 should be used.
+2) Source the Xilinx SDSoC version 2016.2, and do "make" to generate the software library (.a file) and FPGA bitstream (BOOT.BIN file).
+3) In zc702 board, use the software application corresponding to the accelerator and place the generated library in the Lib directory provided inside the host application directory, and the generated bit stream file inside /mnt. Also make sure the "Schedulers" directory provided is correctly addressed in the main cpp file, and the "energy-meter" directory is also correctly pointed in the scheduler. Also in the host application Makefile, "energy-meter" and "lib" directories should be correctly addressed. If the application is interrupt-based, make sure the my_driver.ko file provided is placed in /mnt/ as the insmod command in .sh file will use it.
+4) After restarting the board OS, do "make" to create the executable on host and run it by executing the .sh file provided. The experiment results are generated as .txt files, one file for every combination of FPGA and CPU cores.

@@ -159,6 +159,12 @@ struct energy_sample * energy_meter_init(int sample_rate, int debug) // sample r
 	sample->eCPU=0.0;
 	sample->eFPGA=0.0;
 	sample->eMEM=0.0;
+	sample->pCPU=0.0;
+	sample->pFPGA=0.0;
+	sample->wCPU=0.0;
+	sample->wFPGA=0.0;
+	sample->wMEM=0.0;
+	sample->pMEM=0.0;
 	sample->destroy=0;
 	sample->stop=1;
 	sample->samples=0;
@@ -205,9 +211,9 @@ void energy_meter_stop(struct energy_sample *sample)
 	// claculate energy until now **************************************
 	secs= dif.tv_nsec/1000000000.0; // move to seconds
 	// Watt*sec=Joules
-	sample->eCPU += sample->cpuW * secs;	
-	sample->eFPGA += sample->fpgaW * secs;
-	sample->eMEM += sample->memW * secs;
+	/*sample->eCPU += (sample->cpuW - sample->pCPU) * secs; //remove idle power	
+	sample->eFPGA += (sample->fpgaW - sample->pFPGA )* secs;
+	sample->eMEM += (sample->memW - sample->pMEM) * secs;*/
 	
 }
 //-------------------------------------------------------------------
@@ -228,31 +234,88 @@ void energy_meter_printf(struct energy_sample *sample1, FILE * fout)
 	res=diff(sample1->start_time, sample1->stop_time);
 	
 	fprintf(fout,"+--------------------+\n");
-	fprintf(fout,"| POWER MEASUREMENTS |\n");
+	fprintf(fout,"| POWER/ENERGY MEASUREMENTS |\n");
 	fprintf(fout,"+--------------------+\n");
-	
-	fprintf(fout,"CPU= %lf J :: FPGA= %lf J :: Mem= %lf J\n",sample1->eCPU,sample1->eFPGA,sample1->eMEM);
-	fprintf(fout,"TOTAL E= %lf J\n",total_em((*sample1)));
+	fprintf(fout,"P CPU= %lf mW :: FPGA= %lf mW :: Mem= %lf mW\n",1000*sample1->cpuW ,1000*sample1->fpgaW,1000*sample1->memW);
+	fprintf(fout,"E CPU= %lf mJ :: FPGA= %lf mJ :: Mem= %lf mJ\n",1000*sample1->eCPU,1000*sample1->eFPGA,1000*sample1->eMEM);
+	fprintf(fout,"TOTAL E= %lf mJ\n",(1000*total_em((*sample1))));
 	fprintf(fout,"CLOCK_REALTIME = %lf sec\n",(double)res.tv_sec+ (double)res.tv_nsec/1000000000.0);	
-	fprintf(fout,"# of samples: %ld\n", sample1->samples);
+	fprintf(fout,"# of samples: %d\n", sample1->samples);
 	fprintf(fout,"sample every (real) = %lf sec\n",((double)res.tv_sec+ (double)res.tv_nsec/1000000000.0)/sample1->samples);	
 	fprintf(fout,"sample every: %lf sec\n",(double)sample1->sample_rate/1000000);	
 	
 }
+
+void power_meter_idle(struct energy_sample *sample)
+{
+	// read 10 times sensors 
+	int i;
+	double cpuW,fpgaW,memW;
+
+	cpuW = 0.0;
+	fpgaW = 0.0;
+	memW = 0.0;
+
+	for(i=0;i<10;i++)
+	{
+		read_sensors(sample->pCPU, sample->pFPGA, sample->pMEM);
+		cpuW += sample->pCPU;
+		fpgaW += sample->pFPGA;
+		memW += sample->pMEM;
+	}
+
+	sample->pCPU = cpuW/10.0;
+	sample->pFPGA= fpgaW/10.0;
+	sample->pMEM = memW/10.0;
+	printf("idle CPU= %lf W :: idle FPGA= %lf W :: idle Mem= %lf W\n",sample->pCPU,sample->pFPGA,sample->pMEM);
+	
+}
+	
+
 //-------------------------------------------------------------------
 
 void energy_meter_read(struct energy_sample *sample, struct em_t * out)
 {
 	double secs;
 	struct timespec dif;
-   
+	int i;
+	double cpuW,fpgaW,memW;
+	float loop_samples;   
+
 	// mutex 
 	pthread_mutex_lock(&(sample->mutex));
+
+	/*	out->wCPU= sample->cpuW;
+		out->wFPGA= sample->fpgaW;
+		out->wMEM= sample->memW; */
 	
 		sample->now=!sample->now;
 		// get time now**********************************
 		clock_gettime(CLOCK_REALTIME, sample->res+sample->now );
-		read_sensors(sample->cpuW, sample->fpgaW, sample->memW);
+
+		cpuW = 0.0;
+		fpgaW = 0.0;
+		memW = 0.0;
+		loop_samples = 0.0;
+
+		for(i=0;i<10;i++)
+		{
+			read_sensors(sample->cpuW, sample->fpgaW, sample->memW);
+                        if (sample->cpuW < 2.0 && sample->fpgaW < 2.0 && sample->memW < 2.0)
+			{
+				cpuW += sample->cpuW;
+				fpgaW += sample->fpgaW;
+				memW += sample->memW;
+				loop_samples++;
+			}
+		}
+		
+		sample->cpuW = cpuW/loop_samples;
+		sample->fpgaW= fpgaW/loop_samples;
+		sample->memW = memW/loop_samples;
+
+		printf("final CPU w %f samples %d\n",sample->cpuW,sample->samples);
+	
 		// get time interval    !!! only nanoseconds, sampling rate must be below 1 second
 		dif.tv_nsec=sample->res[sample->now].tv_nsec-sample->res[!sample->now].tv_nsec;
 		if(	dif.tv_nsec <0)	dif.tv_nsec += 1000000000;
@@ -262,9 +325,20 @@ void energy_meter_read(struct energy_sample *sample, struct em_t * out)
 		secs= dif.tv_nsec/1000000000.0; // move to seconds
         
 		// Watt*sec=Joules
-		sample->eCPU += sample->cpuW * secs;
-		sample->eFPGA += sample->fpgaW * secs;
-		sample->eMEM += sample->memW * secs;
+		//fprintf(stdout,"active= %lf W : idle= %lf W\n",sample->fpgaW ,sample->pFPGA);
+		/*fprintf(stdout,"fpga active= %lf W : idle= %lf W\n",sample->fpgaW ,sample->pFPGA);
+		fprintf(stdout,"cpu active= %lf W : idle= %lf W\n",sample->cpuW ,sample->pCPU);
+		fprintf(stdout,"mem active= %lf W : idle= %lf W\n",sample->memW ,sample->pMEM);*/
+		//sample->eCPU += (sample->cpuW - sample->pCPU)  * secs; //remove idle power
+		//sample->eFPGA += (sample->fpgaW - sample->pFPGA) * secs;
+		//sample->eMEM += (sample->memW - sample->pMEM) * secs;
+		sample->eCPU += (sample->cpuW)  * secs; //full energy
+		sample->eFPGA += (sample->fpgaW) * secs;
+		sample->eMEM += (sample->memW) * secs;
+		sample->wCPU += (sample->cpuW); //full power
+		sample->wFPGA += (sample->fpgaW);
+		sample->wMEM += (sample->memW);
+		//fprintf(stdout,"E fpga= %lf J : cpu= %lf J mem=%lf J and secs %lf\n",sample->eFPGA,sample->eCPU ,sample->eMEM,secs);
 				
 		sample->samples++;
 	
@@ -272,12 +346,19 @@ void energy_meter_read(struct energy_sample *sample, struct em_t * out)
 	out->eFPGA= sample->eFPGA;
 	out->eMEM= sample->eMEM;
 	
+	out->wCPU= (sample->wCPU/sample->samples);
+	out->wFPGA= (sample->wFPGA/sample->samples);
+	out->wMEM= (sample->wMEM/sample->samples);
+	printf("final average CPU power %f \n",out->wCPU);
+
+
+	//printf("final CPU w %f\n",out->wCPU);
 	
 	pthread_mutex_unlock(&(sample->mutex));
 	
 }
 //-------------------------------------------------------------------
-void energy_meter_diff(struct energy_sample *sample, struct em_t * diff)
+/*void energy_meter_diff(struct energy_sample *sample, struct em_t * diff)
 {
 	double secs;
 	struct timespec dif;
@@ -312,7 +393,7 @@ void energy_meter_diff(struct energy_sample *sample, struct em_t * diff)
 	
 	pthread_mutex_unlock(&(sample->mutex));
 
-}
+}*/
 //-------------------------------------------------------------------
 void energy_meter_read_printf(struct em_t * diff, FILE *fout)
 {
@@ -327,7 +408,10 @@ void *meter_function(void *arg)
 	struct energy_sample *sample=(struct energy_sample *) arg;
 	
 	struct timespec dif;
+	int i;
+	double cpuW,fpgaW,memW;
 	double secs;
+	float loop_samples;
 	
     sample->now=0;
     // first sample
@@ -341,6 +425,7 @@ void *meter_function(void *arg)
 	while(1)  // sampling on course
 	{
 		pthread_mutex_lock(&(sample->mutex));
+				
 		if(sample->destroy)
 		{
 			pthread_mutex_unlock(&(sample->mutex));
@@ -349,7 +434,28 @@ void *meter_function(void *arg)
 		sample->now=!sample->now;
 		// get time now**********************************
 		clock_gettime(CLOCK_REALTIME, sample->res+sample->now );
-		read_sensors(sample->cpuW, sample->fpgaW, sample->memW);
+
+		cpuW = 0.0;
+		fpgaW = 0.0;
+		memW = 0.0;
+		loop_samples =0.0;
+
+		for(i=0;i<10;i++)
+		{
+			read_sensors(sample->cpuW, sample->fpgaW, sample->memW);		 
+			if (sample->cpuW < 2.0 && sample->fpgaW < 2.0 && sample->memW < 2.0)
+			{
+				cpuW += sample->cpuW;
+				fpgaW += sample->fpgaW;
+				memW += sample->memW;
+				loop_samples++;
+			}
+		}
+		
+		sample->cpuW = cpuW/loop_samples;
+		sample->fpgaW= fpgaW/loop_samples;
+		sample->memW = memW/loop_samples;
+	
 		// get time interval    !!! only nanoseconds, sampling rate must be below 1 second
 		dif.tv_nsec=sample->res[sample->now].tv_nsec-sample->res[!sample->now].tv_nsec;
 		if(	dif.tv_nsec <0)	dif.tv_nsec += 1000000000;
@@ -359,9 +465,22 @@ void *meter_function(void *arg)
 		secs= dif.tv_nsec/1000000000.0; // move to seconds
         
 	    // Watt*sec=Joules
-		sample->eCPU += sample->cpuW * secs;
-		sample->eFPGA += sample->fpgaW * secs;
-		sample->eMEM += sample->memW * secs;
+
+		//fprintf(stdout,"fpga active= %lf W : idle= %lf W\n",sample->fpgaW ,sample->pFPGA);
+		//fprintf(stdout,"cpu = %lf J : sample= %d secs =%lf power = %lf \n",sample->eCPU ,sample->samples,secs,(sample->cpuW - sample->pCPU));
+		//fprintf(stdout,"mem active= %lf W : idle= %lf W\n",sample->memW ,sample->pMEM);*/
+		//sample->eCPU += (sample->cpuW - sample->pCPU)  * secs; //remove idle power
+		//sample->eFPGA += (sample->fpgaW - sample->pFPGA) * secs;
+		//sample->eMEM += (sample->memW - sample->pMEM) * secs;
+
+		sample->eCPU += (sample->cpuW)  * secs; //full energy
+		sample->eFPGA += (sample->fpgaW) * secs;
+		sample->eMEM += (sample->memW) * secs;
+		sample->wCPU += (sample->cpuW); //full power
+		sample->wFPGA += (sample->fpgaW);
+		sample->wMEM += (sample->memW);
+
+//printf("CPU w %f\n",sample->cpuW);
 		
 		sample->samples++;
 		// DEBUG
@@ -431,7 +550,7 @@ void *meter_function_debug(void *arg)
 		
 		sample->samples++;
 		// DEBUG
-		fprintf(debugf,"%ld;", sample->samples);
+		fprintf(debugf,"%d;", sample->samples);
 		
 		fprintf(debugf,"%ld;", (long)dif.tv_nsec);	
 		
