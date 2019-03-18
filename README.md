@@ -22,6 +22,8 @@ Multiple fuctions. In this scenario each hardware instance have a different hard
 //hardware instance approach used in SPMM
    mmult_top1(array_temp_a, array_temp_b, array_temp_c, line_count);
 
+NOTE: If you use HP ports to interface the hardware then execution with more than one FPGA core fails with no virtual memory mapping. This is not a problem with HPC. If you really want to use the HP ports then you need make independent SD_alloc memory allocations per core (not a single area)  and copy chuncks of data from malloc to sds_alloc on-demand. It seems that with HP ports the 4 hardware cores cannot access a single sds_alloc area. 
+
 
 
 
