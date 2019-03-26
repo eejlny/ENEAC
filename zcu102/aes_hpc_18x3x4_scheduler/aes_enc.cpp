@@ -25,13 +25,14 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
 //#pragma SDS data mem_attribute(cipher:PHYSICAL_CONTIGUOUS)
 //#pragma SDS data mem_attribute(state:PHYSICAL_CONTIGUOUS)
-#pragma SDS data data_mover(state:AXIDMA_SIMPLE, cipher:AXIDMA_SIMPLE)
+//#pragma SDS data data_mover(state:AXIDMA_SIMPLE, cipher:AXIDMA_SIMPLE)
+#pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
 #pragma SDS data copy(state[0:(block_size/16)])
 #pragma SDS data copy(cipher[0:(block_size/16)])
 #pragma SDS data access_pattern(state:SEQUENTIAL)
 #pragma SDS data access_pattern(cipher:SEQUENTIAL)
-#pragma SDS data sys_port(state:HPC,cipher:HPC)
-void aes_enc(data_t *state,data_t *cipher,uint8_t ekey[240],unsigned int block_size)
+#pragma SDS data sys_port(state:ps_e_S_AXI_HPC0_FPD,cipher:ps_e_S_AXI_HPC0_FPD)
+void aes_enc1(data_t *state,data_t *cipher,uint8_t ekey[240],unsigned int block_size)
 
 {
 	int i,j;
@@ -53,6 +54,99 @@ void aes_enc(data_t *state,data_t *cipher,uint8_t ekey[240],unsigned int block_s
 
 
 }
+
+//#pragma SDS data data_mover(state:AXIDMA_SIMPLE, cipher:AXIDMA_SIMPLE)
+#pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
+#pragma SDS data copy(state[0:(block_size/16)])
+#pragma SDS data copy(cipher[0:(block_size/16)])
+#pragma SDS data access_pattern(state:SEQUENTIAL)
+#pragma SDS data access_pattern(cipher:SEQUENTIAL)
+#pragma SDS data sys_port(state:ps_e_S_AXI_HPC1_FPD,cipher:ps_e_S_AXI_HPC1_FPD)
+void aes_enc2(data_t *state,data_t *cipher,uint8_t ekey[240],unsigned int block_size)
+
+{
+	int i,j;
+	uint8_t iteration = 0;
+	uint8_t x,y;
+
+	data_stream_t state_stream;
+	data_stream_t cipher_stream;
+
+	uint8_t ekey_buf[240];
+
+    #pragma HLS array_partition variable=ekey_buf complete
+
+	for(j=0; j<240; j++) {
+	   #pragma HLS PIPELINE
+	         ekey_buf[j] = ekey[j];
+	}
+	aes_wrapper(state,cipher,ekey_buf,block_size);
+
+
+}
+
+
+//#pragma SDS data data_mover(state:AXIDMA_SIMPLE, cipher:AXIDMA_SIMPLE)
+#pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
+#pragma SDS data copy(state[0:(block_size/16)])
+#pragma SDS data copy(cipher[0:(block_size/16)])
+#pragma SDS data access_pattern(state:SEQUENTIAL)
+#pragma SDS data access_pattern(cipher:SEQUENTIAL)
+#pragma SDS data sys_port(state:ps_e_S_AXI_HPC0_FPD,cipher:ps_e_S_AXI_HPC0_FPD)
+void aes_enc3(data_t *state,data_t *cipher,uint8_t ekey[240],unsigned int block_size)
+
+{
+	int i,j;
+	uint8_t iteration = 0;
+	uint8_t x,y;
+
+	data_stream_t state_stream;
+	data_stream_t cipher_stream;
+
+	uint8_t ekey_buf[240];
+
+    #pragma HLS array_partition variable=ekey_buf complete
+
+	for(j=0; j<240; j++) {
+	   #pragma HLS PIPELINE
+	         ekey_buf[j] = ekey[j];
+	}
+	aes_wrapper(state,cipher,ekey_buf,block_size);
+
+
+}
+
+
+//#pragma SDS data data_mover(state:AXIDMA_SIMPLE, cipher:AXIDMA_SIMPLE)
+#pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
+#pragma SDS data copy(state[0:(block_size/16)])
+#pragma SDS data copy(cipher[0:(block_size/16)])
+#pragma SDS data access_pattern(state:SEQUENTIAL)
+#pragma SDS data access_pattern(cipher:SEQUENTIAL)
+#pragma SDS data sys_port(state:ps_e_S_AXI_HPC1_FPD,cipher:ps_e_S_AXI_HPC1_FPD)
+void aes_enc4(data_t *state,data_t *cipher,uint8_t ekey[240],unsigned int block_size)
+
+{
+	int i,j;
+	uint8_t iteration = 0;
+	uint8_t x,y;
+
+	data_stream_t state_stream;
+	data_stream_t cipher_stream;
+
+	uint8_t ekey_buf[240];
+
+    #pragma HLS array_partition variable=ekey_buf complete
+
+	for(j=0; j<240; j++) {
+	   #pragma HLS PIPELINE
+	         ekey_buf[j] = ekey[j];
+	}
+	aes_wrapper(state,cipher,ekey_buf,block_size);
+
+
+}
+
 
 
 
