@@ -29,15 +29,15 @@ either expressed or implied, of the FreeBSD Project*/
 #define nb 4
 //#define nr 2
 #define nr 14
-#define DEBUG 0
-#define BLOCK_SIZE 16
+//#define DEBUG 
+//#define BLOCK_SIZE 16
 
 
-#if DEBUG==1
+#ifdef DEBUG
 	#define block_size 1   //the size of the data in multiples of 16
 	//#define int_block_size 8
 #else
-	#define block_size 1048576   //the size of the d in multiples of 16
+	//#define block_size 1048576   //the size of the d in multiples of 16
 	//#define int_block_size 262144
 #endif
 

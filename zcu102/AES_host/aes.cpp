@@ -32,6 +32,7 @@
 
 int main_thread=0;
 int main_core=0;
+int block_size; //how many blocks of 16 bytes to process
 
 
 
@@ -149,6 +150,19 @@ void keyexpansion(uint8_t key[32], uint8_t ekey[240])
 
 }
 
+
+int fsize(FILE *fp){
+    int prev=ftell(fp);
+    fseek(fp, 0L, SEEK_END);
+    int sz=ftell(fp);
+    fseek(fp,prev,SEEK_SET); //go back to where we were
+    return sz;
+}
+
+
+
+
+
 void read_input(uint32_t *state, char *file)
 {
 	FILE *fp;
@@ -164,6 +178,12 @@ void read_input(uint32_t *state, char *file)
 				printf(" %x", state[x]);
 			}
 			printf("\n");	*/
+
+	block_size = fsize(fp)/16;
+
+	printf("The number of blocks to encrypt is %d\n",block_size);
+
+
 	fclose(fp);
 }
 
@@ -240,6 +260,7 @@ void usage(int argc, char **argv) {
 	fprintf(stderr, "\t<chunkGPU> - (Fixed or Dynamic) fixed size size assigned to GPU (CPU adapts dynamically to match effort)\n");
 	exit(1);
 }
+
 
 
 
@@ -365,28 +386,31 @@ int main(int argc, char** argvv) {
 	cout << "          core: " << main_core << endl;
     #endif
 
-	char *ifile, *ofile;
+	char ifile[40], ofile[40];
 
-	//uint8_t *ekey_sw;
-	ekey = (uint8_t *)sds_alloc(240 * sizeof(uint8_t));
-	//ekey_sw = (uint8_t *)sds_alloc(240 * sizeof(uint8_t));
-	state = (uint32_t*)sds_alloc(16*block_size * sizeof(uint8_t));
-	//state_sw = (uint8_t*)sds_alloc(group_size * sizeof(uint8_t));
-	cipher = (uint32_t*)sds_alloc(16*block_size * sizeof(uint8_t));
-	//cipher_sw = (uint8_t*)sds_alloc(group_size*sizeof(uint8_t));
+	strcpy(ifile, argv[1]);
+	strcpy(ofile, argv[2]);
 
-   if(!state) {exit(1);}
-  if(!cipher) {exit(1);}
+	read_input(state, ifile);
+	
+
+
+	//ekey = (uint8_t *)sds_alloc(240 * sizeof(uint8_t));
+	//state = (uint32_t*)sds_alloc(16*block_size * sizeof(uint8_t));
+	//cipher = (uint32_t*)sds_alloc(16*block_size * sizeof(uint8_t));
+	
+	ekey = (uint8_t *)malloc(240 * sizeof(uint8_t));
+	state = (uint32_t*)malloc(16*block_size * sizeof(uint8_t));
+	cipher = (uint32_t*)malloc(16*block_size * sizeof(uint8_t));
+
+   if(!state) {printf("Fail to allocate memory\n");exit(1);}
+  if(!cipher) {printf("Fail to allocate memory\n");exit(1);}
 
     printf("Memories allocated\n");
 
 
 	keyexpansion(key, ekey);
 
-	ifile = "./sydney_fpga.pdf"; //argv[1];
-	ofile = "./sydney_fpga.out"; //argv[2];
-
-	read_input(state, ifile);
 	
 
 

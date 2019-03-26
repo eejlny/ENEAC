@@ -91,7 +91,7 @@ public:
     //printf("operator FPGA being %d end %d with interrupt at %x\n",begin,end,(int)status);
     ////		kernelAES((uint32_t*)state,(uint32_t*)cipher,ekey, interrupt, status, file_desc, begin, end);
     //kernelAES((uint32_t*)state,(uint32_t*)cipher,ekey, begin, end, numfpgas);
-    cerr << "Activating FPGA " << id << " with " << begin << " begin " << end << " end " << endl;
+    //cerr << "Activating FPGA " << id << " with " << begin << " begin " << end << " end " << endl;
     switch(id)
     {
       case 1 : kernelAES1((uint8_t*)state,(uint8_t*)cipher,ekey, begin, end); break;
