@@ -231,7 +231,7 @@ int compute_aes(uint32_t *state, uint32_t *cipher, uint8_t ekey[240])
 	//hs.Initialize(numcpus, numgpus, atoi(argv[3]));//,interrupt);
 	// Begin iterations
 	hs->startTimeAndEnergy();
-        int total_iterations = 100;
+        int total_iterations = 1;
 
 	//printf("being interactions\n");
 
