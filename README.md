@@ -24,6 +24,8 @@ Multiple fuctions. In this scenario each hardware instance have a different hard
 
 NOTE: If you use HP ports to interface the hardware then execution with more than one FPGA core fails with no virtual memory mapping. This is not a problem with HPC. If you really want to use the HP ports then you need make independent SD_alloc memory allocations per core (not a single area)  and copy chuncks of data from malloc to sds_alloc on-demand. It seems that with HP ports the 4 hardware cores cannot access a single sds_alloc area. 
 
+ENERGY METERING SUPPORT: to add energy/power metering support replace the scheduler files with the files located in the energy-support directory and also move the directory energy-meter to the same level as the benchmark_host directory. The scheduler.h should have #define ENERGY and the Makefile will compile and link with the energy-mter library.
+
 
 
 
