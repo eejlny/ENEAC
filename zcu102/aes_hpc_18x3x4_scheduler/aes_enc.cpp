@@ -10,7 +10,7 @@ void *__dso_handle = NULL;
 }
 
 
-
+//block size is the number of bytes to process
 
 void aes_wrapper(data_t *state,data_t *cipher,uint8_t ekey[240],uint32_t byte_count);
 void addroundkey(data_stream_t &state,uint8_t iteration, data_stream_t &result,uint8_t ekey[240],uint32_t byte_count);
