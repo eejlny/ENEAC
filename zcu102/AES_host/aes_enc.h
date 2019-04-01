@@ -104,6 +104,7 @@ void aes_process_arm(const uint8_t key[], const uint8_t subkeys[], uint32_t roun
 
 		input += 16; output += 16;
 		length -= 16;
+		//printf("remaining length is %d\n", length);
 	}
 }
 
@@ -119,8 +120,8 @@ float step;
 
 ////int *interrupt;
 ////int *status;
-uint32_t *state;
-uint32_t *cipher;
+uint8_t *state;
+uint8_t *cipher;
 uint8_t vbyte[4];
 uint8_t sbyte[4];
 ////int file_desc;

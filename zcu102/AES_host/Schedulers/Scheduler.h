@@ -17,7 +17,7 @@
 #include "tbb/task_scheduler_init.h"
 #include "tbb/tick_count.h"
 
-#define ENERGY
+//#define ENERGY
 
 #ifdef ENERGY
 #include "../../energy-meter/energy_meter.h"
@@ -25,7 +25,17 @@
 
 struct energy_sample *sample1;
 struct em_t final_em; // to get final energies
+#else
+int set_thread_affinity_CORE(pthread_t th, int cpu)
+{
+	cpu_set_t mask;
+	__CPU_ZERO_S(sizeof(cpu_set_t),&mask);
+	__CPU_SET_S(cpu,sizeof(cpu_set_t), &mask);
+
+	return pthread_setaffinity_np(th, sizeof(cpu_set_t), &mask);
+}
 #endif
+
 
 #ifdef PJTRACER
 #include "pfortrace.h"

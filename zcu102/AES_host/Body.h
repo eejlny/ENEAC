@@ -91,14 +91,25 @@ public:
     //printf("operator FPGA being %d end %d with interrupt at %x\n",begin,end,(int)status);
     ////		kernelAES((uint32_t*)state,(uint32_t*)cipher,ekey, interrupt, status, file_desc, begin, end);
     //kernelAES((uint32_t*)state,(uint32_t*)cipher,ekey, begin, end, numfpgas);
-    //cerr << "Activating FPGA " << id << " with " << begin << " begin " << end << " end " << endl;
+   // cerr << "Activating FPGA " << id << " with " << begin << " begin " << end << " end " << endl;
+    bodies_F+=end-begin;
+
     switch(id)
     {
-      case 1 : kernelAES1((uint8_t*)state,(uint8_t*)cipher,ekey, begin, end); break;
-      case 2 : kernelAES2((uint8_t*)state,(uint8_t*)cipher,ekey, begin, end); break;
-      case 3 : kernelAES3((uint8_t*)state,(uint8_t*)cipher,ekey, begin, end); break;
-      case 4 : kernelAES4((uint8_t*)state,(uint8_t*)cipher,ekey, begin, end); break;
+      case 1 : kernelAES1((uint8_t*)state,(uint8_t*)cipher,ekey, (begin), (end)); break;
+      case 2 : kernelAES2((uint8_t*)state,(uint8_t*)cipher,ekey, (begin), (end)); break;
+      case 3 : kernelAES3((uint8_t*)state,(uint8_t*)cipher,ekey, (begin), (end)); break;
+      case 4 : kernelAES4((uint8_t*)state,(uint8_t*)cipher,ekey, (begin), (end)); break;
     }
+
+   /* if(begin == 0)
+    {
+
+    	for(int i = 0; i < 10; i++) 
+   	 {
+		printf("cipher %d is %hhd\n", i, *(cipher+i));
+    	}
+     } */
   }
 
   void getBackObjectFromGPU(int begin, int end) {  }
@@ -106,8 +117,23 @@ public:
   void OperatorCPU(int begin, int end) {
     {
 
+	//printf("operator CPU being %d end %d\n",(16*begin),(16*end));
+
+        bodies_C+=end-begin;
+
 #if defined(__ARM_ACLE) || defined(__ARM_FEATURE_CRYPTO)
-        aes_process_arm((const uint8_t*)key, (const uint8_t*)ekey, nr, (uint8_t*)&state[begin], (uint8_t*)&cipher[begin], end-begin);
+        aes_process_arm((const uint8_t*)key, (const uint8_t*)ekey, nr, (uint8_t*)&state[begin*16], (uint8_t*)&cipher[begin*16], (16*(end-begin)));
+
+
+  /*   if(begin == 0)
+     {
+
+    	for(int i = 0; i < 10; i++) 
+   	 {
+		printf("cipher %d is %hhd\n", i, *(cipher+i));
+    	}
+     }*/
+
 #else
       int i;
       uint8_t iteration = 0;

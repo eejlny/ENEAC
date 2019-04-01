@@ -34,6 +34,8 @@ int main_thread=0;
 int main_core=0;
 int block_size; //how many blocks of 16 bytes to process
 
+long unsigned int bodies_C=0, bodies_F=0;
+
 
 
 ////#define MAP_SIZE 4096UL
@@ -163,32 +165,20 @@ int fsize(FILE *fp){
 
 
 
-void read_input(uint32_t *state, char *file)
+void read_input(uint8_t *state, FILE *fp)
 {
-	FILE *fp;
+	
 
-	fp = fopen(file, "rb");
-	if (!fp)
-	{
-		printf("file could not be opened for reading\n");
-		exit(1);
-	}
+	
 	fread(state, (16*block_size), 1, fp); // Read in the entire block
-	/*for(int x=0;x<4;x++){
-				printf(" %x", state[x]);
-			}
-			printf("\n");	*/
-
-	block_size = fsize(fp)/16;
-
-	printf("The number of blocks to encrypt is %d\n",block_size);
-
+	
+	
 
 	fclose(fp);
 }
 
 
-void write_output(uint32_t *state, char *file)
+void write_output(uint8_t *state, char *file)
 {
 	FILE *fp;
 
@@ -208,7 +198,7 @@ void write_output(uint32_t *state, char *file)
 
 
 ////int compute_aes(uint32_t *state, uint32_t *cipher, uint8_t ekey[240], int* interrupt)
-int compute_aes(uint32_t *state, uint32_t *cipher, uint8_t ekey[240])
+int compute_aes(uint8_t *state, uint8_t *cipher, uint8_t ekey[240])
  
 { 
 
@@ -389,29 +379,47 @@ int main(int argc, char** argvv) {
 	char ifile[40], ofile[40];
 
 	strcpy(ifile, argv[1]);
-	strcpy(ofile, argv[2]);
-
-	read_input(state, ifile);
-	
+	strcpy(ofile, argv[2]);	
 
 
 	//ekey = (uint8_t *)sds_alloc(240 * sizeof(uint8_t));
-	//state = (uint32_t*)sds_alloc(16*block_size * sizeof(uint8_t));
-	//cipher = (uint32_t*)sds_alloc(16*block_size * sizeof(uint8_t));
+	//state = (uint32_t*)sds_alloc(16*(block_size+1) * sizeof(uint8_t));
+	//cipher = (uint32_t*)sds_alloc(16*(block_size+1) * sizeof(uint8_t));
+
+	FILE *fp;
+
+	fp = fopen(ifile, "rb");
+	if (!fp)
+	{
+		printf("file could not be opened for reading\n");
+		exit(1);
+	}
+
+	block_size = fsize(fp)/16; //number of 16 byte blocks in file
+
+	//block_size = 1048576;
+	//block_size = 262144;
+
+
+	printf("The number of blocks to encrypt is %d\n",block_size);
+	printf("The chunk size for FPGA as a number of blocks is %d\n",atoi(argv[5]));
+
+
+	//block_size =  1048576;
 	
 	ekey = (uint8_t *)malloc(240 * sizeof(uint8_t));
-	state = (uint32_t*)malloc(16*block_size * sizeof(uint8_t));
-	cipher = (uint32_t*)malloc(16*block_size * sizeof(uint8_t));
+	state = (uint8_t*)malloc(16*block_size* sizeof(uint8_t));
+	cipher = (uint8_t*)malloc(16*block_size * sizeof(uint8_t));
 
    if(!state) {printf("Fail to allocate memory\n");exit(1);}
   if(!cipher) {printf("Fail to allocate memory\n");exit(1);}
 
-    printf("Memories allocated\n");
+    printf("Memories allocated with %d bytes\n",(block_size*16));
 
 
 	keyexpansion(key, ekey);
 
-	
+	read_input(state, fp);
 
 
         printf("Starting computation\n");
@@ -462,6 +470,13 @@ int main(int argc, char** argvv) {
 	sds_free(ekey);
 	sds_free(state);
 	sds_free(cipher);
+
+	
+   	printf("Total n. rows : %d\n", bodies_F+bodies_C);
+   	printf("Total n. rows on CPU: %d\n", bodies_C);
+   	printf("Total n. rows on FPGA: %d\n", bodies_F);
+   	printf("Actual percentage of work offloaded to the FPGA:%d%% \n",bodies_F*100/(bodies_F+bodies_C));
+
 ////  	sds_munmap((void *)status);
 ////	munmap(mapped_base, MAP_SIZE);
 ////	close(memfd);
