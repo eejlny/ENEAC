@@ -26,6 +26,8 @@ NOTE: If you use HP ports to interface the hardware then execution with more tha
 
 ENERGY METERING SUPPORT: to add energy/power metering support replace the scheduler files with the files located in the energy-support directory and also move the directory energy-meter to the same level as the benchmark_host directory. The scheduler.h should have #define ENERGY and the Makefile will compile and link with the energy-mter library.
 
+SCRIPTS: the script folder contains an example of the data that should be extracted from the board and the processing of this data to generate results figures. Modify as needed.
+
 
 
 
