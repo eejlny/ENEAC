@@ -218,6 +218,7 @@ def main(argv):
         print inputfile_header + aggregated_results[num] + '\n'
         
     #Plotting part of the script 
+
     if plottype == 1:   
         #Process aggregated data for plot type 1
         #This means converting the data from per file to per configuration type
@@ -227,6 +228,7 @@ def main(argv):
         for num, infile in enumerate(inputfile):
             #Check if new configuration
             temp_conf = sched_type[num]+"+IOCTL(" + ioctl_flag[num] + "):"+str(cpu_cores[num])+"C+"+str(fpga_hpacc[num])+"HP+"+str(fpga_hpcacc[num])+"HPC"
+
             if temp_conf not in configs:
                 configs.append(temp_conf)
                 conf_exec_time.append([])
@@ -253,6 +255,7 @@ def main(argv):
             for i in range(len(conf_chunk_size[num])):
                 temparr.append([conf_chunk_size[num][i],conf_exec_time[num][i]])
             temparr = sorted(temparr, key=itemgetter(0))
+
             ax.plot([i[0] for i in temparr],[i[1] for i in temparr], label=configs[num])
         
         
@@ -547,8 +550,6 @@ def main(argv):
         rects.append(ax1.bar(index+bar_width, fpga_power_np, bar_width, alpha=opacity_front, color='b', label='FPGA Power', hatch = '/'))
         rects.append(ax1.bar(index+bar_width, total_power_np, bar_width, alpha=opacity_back, color='c', label='Total Power', hatch = '\\'))
         #rects.append(ax1.bar(index + bar_width, fpga_power, bar_width, alpha=opacity, color='c', label='FPGA Power'))
-        
-
 
         ax1.set_xlabel('Configuration')
         ax1.set_ylabel('Power [W]')
