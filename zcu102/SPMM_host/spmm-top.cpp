@@ -18,7 +18,8 @@
 //#define LOGFIT
 //#define PJTRACER
 //#define OVERHEAD_STUDY
-#define MULTIDYNAMIC
+//#define MULTIDYNAMIC
+#define MULTIHAP
 
 #include "kernelspmm.h"
 
@@ -69,6 +70,12 @@ long unsigned int bodies_C=0, bodies_F=0;
 #ifdef MULTIDYNAMIC
 #include "MultiDynamic.h"
 #endif
+#ifdef MULTIHAP
+#include "MultiHap.h"
+#endif
+
+
+
 #include "Body.h"
 
 using namespace std;
@@ -94,6 +101,27 @@ void matrixmatrix(DTYPE *A, DTYPE *y, DTYPE *x, int size)
 		}
 	}
 }
+
+
+//least common multiple
+int lcm( int num1, int num2)
+{
+
+   int i, gcd, lcm;
+   //calculation of gcd
+   for(i=1; i <= num1 && i <= num2; ++i)
+   {
+      if(num1 % i == 0 && num2 % i == 0)
+      gcd = i;
+   }
+   //calculation of lcm using gcd
+   lcm = (num1 * num2) / gcd;
+   cout << "LCM: " << lcm << endl;
+
+   return lcm;
+}
+
+
 
 /*****************************************************************************
  * Main Function
@@ -135,6 +163,16 @@ int main (int argc, char * argv[]){
 #ifdef MULTIDYNAMIC
 	p.gpuChunk = atoi(argv[4]);
 	Dynamic * hs = Dynamic::getInstance(&p);
+#endif
+#ifdef MULTIHAP // new multihap
+	    p.chunkGPU_initratio = (float) atof(argv[4]);
+	    // lcm == least common multiple
+	    // the scheduler will tune chunk size to lay in a 64 bytes offset block
+        int alignment = lcm(64,x_width * sizeof(DTYPE))/(x_width * sizeof(DTYPE)); //find best alignment for chunnk sizes
+        cout << "ALING CHUNK SIZE: " << alignment << endl;
+        p.CHUNKCPUALIGN = alignment; // set to 1 if no alignment required
+        p.CHUNKGPUALIGN = alignment; // set to 1 if no alignment required
+        Hap * hs = Hap::getInstance(&p);
 #endif
 #ifdef FIXEDCHUNK
 	p.cpuChunk = atoi(argv[4]);
