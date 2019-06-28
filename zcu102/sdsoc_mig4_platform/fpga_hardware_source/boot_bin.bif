@@ -1,0 +1,11 @@
+/*
+ Author: Kris Nikov - kris.nikov@bris.ac.uk
+ Date: 11 Jun 2019
+ Description: Image file used to benerate bit.bin hardware blob
+*/
+/*bootgen -arch zynqmp -image boot_bin.bif -w -process_bitstream bin*/
+/* linux */
+all:
+{
+  /home/kn9303/projects/spmm_fast_18_3_igx4_scheduler_clkwiz/_sds/p0/vivado/prj/prj.runs/impl_1/zcu102_wrapper.bit
+}
