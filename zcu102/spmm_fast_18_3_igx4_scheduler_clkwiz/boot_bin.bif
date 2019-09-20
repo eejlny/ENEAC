@@ -1,8 +1,4 @@
-/*
- Author: Kris Nikov - kris.nikov@bris.ac.uk
- Date: 11 Jun 2019
- Description: Image file used to benerate bit.bin hardware blob
-*/
+/* /home/eejlny/projects/framework/bnn_single_tests/_sds/p0/.boot/boot.bif */
 /*bootgen -arch zynqmp -image boot_bin.bif -w -process_bitstream bin*/
 /* linux */
 all:

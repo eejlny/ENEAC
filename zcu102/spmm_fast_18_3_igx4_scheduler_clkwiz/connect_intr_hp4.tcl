@@ -1,6 +1,3 @@
-# Author: Kris Nikov - kris.nikov@bris.ac.uk
-# Date: 11 Jun 2019
-# Description: Tcl commands to connect the 4 interrupt generators to the 4 HP accelerator design in vivado
 connect_bd_net [get_bd_pins sds_irq_const/dout] [get_bd_pins xlconcat_2/In4]
 connect_bd_net [get_bd_pins sds_irq_const/dout] [get_bd_pins xlconcat_2/In5]
 connect_bd_net [get_bd_pins sds_irq_const/dout] [get_bd_pins xlconcat_2/In6]

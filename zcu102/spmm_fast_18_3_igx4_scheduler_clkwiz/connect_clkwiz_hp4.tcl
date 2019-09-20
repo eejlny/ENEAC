@@ -1,6 +1,3 @@
-# Author: Kris Nikov - kris.nikov@bris.ac.uk
-# Date: 11 Jun 2019
-# Description: Tcl commands to connect 200MHz clkwiz to the 4 HP accelerator design in vivado
 delete_bd_objs [get_bd_nets ps_e_pl_clk0]
 create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
 set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200.000} CONFIG.USE_LOCKED {false} CONFIG.USE_RESET {false} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKOUT0_DIVIDE_F {6.000} CONFIG.CLKOUT1_JITTER {102.086}] [get_bd_cells clk_wiz_0]

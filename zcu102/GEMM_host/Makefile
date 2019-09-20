@@ -1,88 +1,59 @@
+# Author: Kris Nikov - kris.nikov@bris.ac.uk
+# Date: 15 jul 2019
+# Description: Makefile used to compile GEMM with energy monitoring and FPGA accelerator support for the ultrascale+ devboard
 
-# HOTSPOT
+hpc: LIB_gemm = ./lib_gemm/hpc
+hpc:	CONFIG_FLAG = -DHPC
 
-include common_variables.mk
+hp: LIB_gemm = ./lib_gemm/hp
+hp: CONFIG_FLAG = -DHP
 
-LIB_energy_arm = ../lib
-LIB_hotspot = ./LibMatrixmult
+#Specify software scheduler type
+SCHEDULER = -DMULTIDYNAMIC
+#SCHEDULER = -DMULTIHAP
 
-CXX= g++-4.9
+#Specify level of debug
+DEBUG_FLAGS = -DHWDEBUG
+#DEBUG_FLAGS = -DDEBUG 
+#DEBUG_FLAGS += -DDEBUG_CHUNKS
+
+LIB_energy_arm = ../lib_energy
+
+CXX= g++
 
 CFLAGS+= -O2 -I . 
+
 CFLAGS+= -Wno-unused-result -Wno-write-strings -Wno-deprecated-register
-CFLAGSA = $(CFLAGS) -std=c++11
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -I $(INCLUDE_TBB_ARM) 
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -march=armv7-a -I $(INCLUDE_TBB_ARM) 
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -mcpu=cortex-a53 -I $(INCLUDE_TBB_ARM) -I ./LibMatrixmult  
-XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -mcpu=cortex-a53 -I ./LibMatrixmult  -I ./Schedulers
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -I $(INCLUDE_TBB_ARM) -I LibkernelHotspot
-XI_CFLAGS+= -DNEON  -funsafe-math-optimizations -ftree-vectorize  -ftree-vectorizer-verbose=2 #If NEON SIMD instructions are to be used
-#XI_CFLAGS+= -mfloat-abi=soft
 
+XI_CFLAGS = $(CFLAGS) -DXILINX -DOFFLOAD --std=gnu++11 -mcpu=cortex-a53 $(CONFIG_FLAG) $(SCHEDULER) -I $(LIB_gemm) -I $(LIB_energy_arm) -I ${CURDIR}  -I ./schedulers
 
-#CFALGS+= -DTRACE  # to get trace file output. Use ViTE to visualize
+XI_CFLAGS+= -DNEON -march=armv8-a+crypto -funsafe-math-optimizations -ftree-vectorize -ftree-vectorizer-verbose=2 #If NEON SIMD instructions are to be used
 
-#LDFLAGS =  -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc # -lgopt 
+#Comment out to disable debug information
+#XI_CFLAGS += $(DEBUG_FLAGS)
 
+LDFLAGS = -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc -z muldefs
 
-LDFLAGS =  -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc
+XI_LDFLAGS = $(LDFLAGS) -L $(LIB_gemm) -L $(LIB_energy_arm)
 
-#XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm) 
-#XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm) ./LibHotspot/libkernelnbody.a
-XI_LDFLAGS = $(LDFLAGS) -L $(LIB_energy_arm) -L $(LIB_hotspot)
-#XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm)
-#XI_LDFLAGS+= -lenergy_meter_arm -lrt -lkernelMatrixmult# -lPVROCL
-XI_LDFLAGS+= -lrt -lkernelMatrixmult# -lPVROCL
-XI_LDFLAGS+= -lenergy_meter_arm 
+XI_LDFLAGS+= -lrt -lkernelgemm -lenergy_meter_arm
 
-XI_PROGs= MM_DSW 
-#NBODYV NBODY_FS
+XI_PROGs= GEMM
 
-PROFILING= HOTSPOT_PROCL 
+SOURCE= gemm_top.cpp kernelgemm.h
 
-SOURCE= matrix_mult.cpp   kernelMatrixmult.h
+hpc hp: ultrascale
 
-.PHONY: all clean odroid libraries
+all: hp hpc
 
-all: odroid
+.PHONY: all
 
-libraries:
-	$(MAKE) -C ../energy-meter
+ultrascale: $(XI_PROGs)
 
-odroid: libraries $(XI_PROGs)
-
-MM_FS: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=FIXS 
-
-MM_DS: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=DYNAMIC -DONETIMESTEP=5
-
-MM_DSW: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=DYNAMIC -DWRITERESULT 
-	#-DHOSTPRI_LINUX
-
-MM_SS: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=SS -DONETIMESTEP=5
-
-MM_b: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=FIXS -DONETIMESTEP=5
-
-MMV: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=FIXS -DVERBOSE=1
-
-MM_NOENERGY: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DSCHED=FIXS -DONETIMESTEP=15 -DNOENERGY
-
-MM_PRIO: $(SOURCE) 
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DHOSTPRI_LINUX -DSCHED=FIXS 
-
-oracle: MM_SS
-
-#define GPU_THRESHOLD 10 
-
-mem_test: mem_test.cpp
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) 
-
+GEMM: $(SOURCE)
+	$(CXX) -o $@ $<  $(XI_CFLAGS) $(XI_LDFLAGS)  $(LDFLAGS)
+	
 clean:
-	rm -f  $(XI_PROGs) HOTSPOT_SS 
-
+	${RM} -f $(XI_PROGs)
+	${RM} *.txt
+	${RM} *.dat

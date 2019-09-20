@@ -19,6 +19,7 @@ import matplotlib.lines as mlines
 from matplotlib.legend_handler import HandlerPatch
 from matplotlib.legend_handler import HandlerLine2D
 from matplotlib.pyplot import cm
+from matplotlib import rc,rcParams
 
 
 class ArrowHandler(HandlerLine2D):
@@ -100,6 +101,12 @@ def main(argv):
     multihap_cpu_energy = []
     multihap_fpga_energy = []
     multihap_aggregated_results = []
+    
+    #rc('text', usetex=True)
+    #rc('axes', linewidth=2)
+    rc('font', weight='bold')
+    rc('font', size='12')
+    #rcParams['text.latex.preamble'] = [r'\usepackage{sfmath} \boldmath']
         
     try:
         opts, args = getopt.getopt(argv,"hp:i:d:e:j:m:u:o:",["ptype=","ifile=","idir=","idfile=","iddir=","idmul=","mhfile=","ofile="])
@@ -585,8 +592,9 @@ def main(argv):
         
         bins_np = np.array(range(min(map(min, conf_chunk_size)),max(map(max, conf_chunk_size))+250,250)) 
         plt.xticks(np.arange(min(bins_np), max(bins_np) + (bins_np[1] - bins_np[0]), bins_np[1] - bins_np[0]))
-        #title='About as simple as it gets, folks')
-        ax.set(xlabel='Chunk Size [#]', ylabel='Execution Time [ms]')
+        #ax.set(xlabel='Chunk Size [#]', ylabel='Execution Time [ms]')
+        ax.set_xlabel('Chunk Size [#]', fontweight='bold')
+        ax.set_ylabel('Execution Time [ms]', fontweight='bold')
        
         custom_line = mlines.Line2D([], [], color='black', marker='*', markersize='10', label='Fastest Point Marker')
         axhandles, dud = ax.get_legend_handles_labels()
@@ -738,7 +746,10 @@ def main(argv):
         #Power/Energy Bar chart
         config_labels = []
         for num, infile in enumerate(inputfile):
-            config_labels.append(sched_type[num]+"+IOCTL(" + ioctl_flag[num] + "):"+str(cpu_cores[num])+"C+"+str(fpga_hpacc[num])+"HP+"+str(fpga_hpcacc[num])+"HPC")
+            if cpu_cores[num] == 0 and fpga_hpacc[num] == 0 and fpga_hpcacc[num] == 0:
+                config_labels.append("IDLE")
+            else:
+                config_labels.append(sched_type[num]+"+IOCTL(" + ioctl_flag[num] + "):"+str(cpu_cores[num])+"C+"+str(fpga_hpacc[num])+"HP+"+str(fpga_hpcacc[num])+"HPC")
                 
         n_groups = len(inputfile)
         cpu_power_np = np.array(cpu_power)
@@ -759,8 +770,8 @@ def main(argv):
         tempbar = ax1.bar(index+bar_width, cpu_power_np, bar_width, alpha=opacity_front, color=c, edgecolor='black', label='Power')
         ax1.errorbar(index+bar_width, cpu_power_np, fpga_power_np, lolims='False', fmt='none' ,ecolor=tempbar.patches[0].get_facecolor())
         
-        ax1.set_xlabel('Configuration')
-        ax1.set_ylabel('Power [W]')
+        ax1.set_xlabel('Configuration', fontweight='bold')
+        ax1.set_ylabel('Power [W]', fontweight='bold')
         ax1.set_xticks(index + bar_width*3 / 2)
         
         ax1.set_xticklabels(config_labels,fontsize='small',rotation='45')
@@ -769,7 +780,7 @@ def main(argv):
         c=next(color)        
         tempbar = ax2.bar(index + bar_width*2, cpu_energy_np, bar_width, alpha=opacity_back, color=c, edgecolor='black', label='Energy')
         ax2.errorbar(index+bar_width*2, cpu_energy_np, fpga_energy_np, lolims='False', fmt='none' ,ecolor=tempbar.patches[0].get_facecolor())
-        ax2.set_ylabel('Energy [J]')  # we already handled the x-label with ax1
+        ax2.set_ylabel('Energy [J]', fontweight='bold')  # we already handled the x-label with ax1
         
         #Construct the legend
         custom_hatch = mpatches.Rectangle((0,0), 0, 0, edgecolor='black', facecolor='white', alpha = opacity_front, label='CPU')

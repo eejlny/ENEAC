@@ -1,8 +1,3 @@
-/*
- Author: Kris Nikov - kris.nikov@bris.ac.uk
- Date: 11 Jun 2019
- Description: Header for the SPMM accelerator functions
-*/
 #ifndef __SPMM_H__
 #define __SPMM_H__
 
@@ -17,13 +12,12 @@ const static int II = 8;
 const static int ROW_SIZE_MAX = (30000);
 const static int COL_SIZE_MAX = ROW_SIZE_MAX;
 
-//Custom variable types used by the functions
 typedef float DTYPE;
 typedef unsigned int u32;
 
 //Choose either the HP or the HPC accelerators
-//#define HP
-#define HPC
+#define HP
+//#define HPC
 
 void spmm_fast_hp0(
 u32 *rowPtr,

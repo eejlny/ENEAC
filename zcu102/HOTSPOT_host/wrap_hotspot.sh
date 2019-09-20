@@ -1,0 +1,142 @@
+#!/bin/bash
+#HOTSPOT wrap script for multipe data collection
+#KrNikov 2019
+
+dmesg -c > /dev/null
+
+# #######
+# #IOCTL#
+# #######
+
+# #CPUHPC
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 2 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_2chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 4 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_4chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 8 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_8chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 16 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_16chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 32 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_32chunk_ioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 64 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_64chunk_ioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 128 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_128chunk_ioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 256 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_256chunk_ioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 512 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_512chunk_ioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 1024 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_1024chunk_ioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 2048 -d 1 -i -s results/12_bigger_workload/CPUHPC/IOCTL/4c_0hp_4hpc_2048chunk_ioctl.data
+
+# #########
+# #NOIOCTL#
+# #########
+
+# #CPUHPC
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 2 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_2chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 4 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_4chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 8 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_8chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 16 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_16chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 32 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_32chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 64 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_64chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 128 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_128chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 256 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_256chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 512 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_512chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 1024 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_1024chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -l 4 -k 2048 -d 1 -s results/12_bigger_workload/CPUHPC/NOIOCTL/4c_0hp_4hpc_2048chunk_noioctl.data
+
+# #CPU
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 2 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_2chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 4 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_4chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 8 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_8chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 16 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_16chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 32 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_32chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 64 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_64chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 128 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_128chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 256 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_256chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 512 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_512chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 1024 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_1024chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 0 -k 2048 -d 1 -s results/12_bigger_workload/CPU/4c_0hp_0hpc_2048chunk_noioctl.data
+
+# #HPC
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 2 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_2chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 4 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_4chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 8 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_8chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 16 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_16chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 32 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_32chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 64 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_64chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 128 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_128chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 256 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_256chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 512 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_512chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 1024 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_1024chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 4 -k 2048 -d 1 -s results/12_bigger_workload/HPC/0c_0hp_4hpc_2048chunk_noioctl.data
+
+# #######
+# #IDEAL#
+# #######
+
+# #CPU
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 2 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_2chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 4 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_4chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 8 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_8chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 16 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_16chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 32 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_32chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 64 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_64chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 128 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_128chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 256 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_256chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 512 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_512chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 1024 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_1024chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 1 -p 0 -k 2048 -d 1 -s results/12_bigger_workload/IDEAL/CPU/1c_0hp_0hpc_2048chunk_noioctl.data
+
+# #HPC
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 2 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_2chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 4 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_4chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 8 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_8chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 16 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_16chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 32 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_32chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 64 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_64chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 128 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_128chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 256 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_256chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 512 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_512chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 1024 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_1024chunk_noioctl.data
+# # ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -l 1 -k 2048 -d 1 -s results/12_bigger_workload/IDEAL/HPC/0c_0hp_1hpc_2048chunk_noioctl.data
+
+#######
+#IOCTL#
+#######
+
+#CPUHP
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 2 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_2chunk_ioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 4 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_4chunk_ioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 8 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_8chunk_ioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 16 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_16chunk_ioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 32 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_32chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 64 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_64chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 128 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_128chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 256 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_256chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 512 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_512chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 1024 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_1024chunk_ioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 2048 -d 1 -i -s results/12_bigger_workload/CPUHP/IOCTL/4c_4hp_0hpc_2048chunk_ioctl.data
+
+#########
+#NOIOCTL#
+#########
+
+#CPUHP
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 2 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_2chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 4 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_4chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 8 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_8chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 16 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_16chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 32 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_32chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 64 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_64chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 128 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_128chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 256 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_256chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 512 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_512chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 1024 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_1024chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 4 -p 4 -k 2048 -d 1 -s results/12_bigger_workload/CPUHP/NOIOCTL/4c_4hp_0hpc_2048chunk_noioctl.data
+
+#HP
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 2 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_2chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 4 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_4chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 8 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_8chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 16 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_16chunk_noioctl.data
+./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 32 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_32chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 64 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_64chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 128 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_128chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 256 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_256chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 512 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_512chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 1024 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_1024chunk_noioctl.data
+# ./hotspot.sh -n 7 -f 2048 -a inputs/temp_1024.data -b inputs/power_1024.data -e -c 0 -p 4 -k 2048 -d 1 -s results/12_bigger_workload/HP/0c_4hp_0hpc_2048chunk_noioctl.data
