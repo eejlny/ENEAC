@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Wed Dec 28 08:42:50 2016">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="148201d9c81a409c96a6e872fb0934bd" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="CustomizeRSBBlock" value="1" type="JavaHandler"/>
+<property name="FileExit" value="1" type="JavaHandler"/>
+<property name="OpenFile" value="3" type="JavaHandler"/>
+<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceCommand.PACommandNames_EXIT, Exit" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_OPEN_FILE, Open File..." value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_OPEN_PROJECT, Open Project..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, Save Block Design" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, zc702_led_wrapper (zc702_led_wrapper.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="12" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, Open Recent File" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="4" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, cd .., true" value="2" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, cd platform, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, cd vivado, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, cd zc702_led, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, cp ./vivado/zc702_led_hw.pfm ., true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, ls -la, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, ls, true" value="4" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, pwd, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, source zc702_led_pfm.tcl, true" value="2" type="GuiResourceData"/>
+<property name="zc702_led_hw.pfm, 314, 271" value="1" type="GuiResourceData"/>
+<property name="zc702_led_pfm.tcl, 205, 178" value="1" type="GuiResourceData"/>
+<property name="zc702_led_pfm.tcl, 365, 274" value="1" type="GuiResourceData"/>
+<property name="zc702_led_pfm.tcl, 370, 274" value="1" type="GuiResourceData"/>
+<property name="zc702_led_pfm.tcl, 442, 280" value="1" type="GuiResourceData"/>
+<property name="zc702_led_pfm.tcl, 82, 275" value="1" type="GuiResourceData"/>
+<property name="zc702_led_sw.pfm, 527, 338" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="10" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="8" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

@@ -7,43 +7,34 @@
 // Description	: This file contains the Body class
 //============================================================================
 
-#ifndef _BODY_TASK_
-#define _BODY_TASK_
 
 #ifdef USEBARRIER
 #include "barrier.h"
 #endif
+
+#include "tbb/parallel_for.h"
+#include "tbb/task.h"
+#include "tbb/tick_count.h"
 #include <stdio.h>
+#include <sds_lib.h>
 #include <stdlib.h>
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <fcntl.h>
-
-#ifndef MALAGA
+#include <sys/mman.h>
 #include <sys/ioctl.h>
 #include <sys/types.h>
-#include <sds_lib.h>
-#include <sys/mman.h>
 #include <linux/fs.h>
 
-#define TIME_STAMP_INIT_HW  unsigned long long clock_start_hw, clock_end_hw;  clock_start_hw = sds_clock_counter();
-#define TIME_STAMP_HW  { clock_end_hw = sds_clock_counter(); printf("SPARSE FPGA ON: execution time : %f ms\n", 1000*(clock_end_hw-clock_start_hw)/(1200*10e6)); clock_start_hw = sds_clock_counter();  }
+#include "kernelgemm.h"
+#include "GEMM.h"
 
-/*Interrupt drivers*/
-#define DRIVER_FILE_NAME_1 "/dev/intgendriver1"
-int file_desc_1 = open(DRIVER_FILE_NAME_1, O_RDWR);	//Open interrupt driver 1
-#define DRIVER_FILE_NAME_2 "/dev/intgendriver2"
-int file_desc_2 = open(DRIVER_FILE_NAME_2, O_RDWR);	//Open interrupt driver 2
-#define DRIVER_FILE_NAME_3 "/dev/intgendriver3"
-int file_desc_3 = open(DRIVER_FILE_NAME_3, O_RDWR);	//Open interrupt driver 3
-#define DRIVER_FILE_NAME_4 "/dev/intgendriver4"
-int file_desc_4 = open(DRIVER_FILE_NAME_4, O_RDWR);	//Open interrupt driver 4
-int ioctl_flag = 1; //enable ioctl calls to driver
-#endif
+using namespace tbb;
+
 
 /*****************************************************************************
- * NbodyTask
+ * GEMM Task
  * **************************************************************************/
 class Body
 {
@@ -52,54 +43,63 @@ public:
 public:
 
 	void OperatorGPU(int begin, int end, int id) {
-		//cerr << "GPU: " << begin << " " << end << " id: " << id << endl;
 		bodies_F+=end-begin;
-
-		cerr << "Activating FPGA " << id << " with " << begin << " begin " << end << " end " << endl;
-
-		switch(id)
-		{
-			case 1 : kernelMatrixmult1((float*)array_a,(float*)array_b,(float*)array_c,begin,end); break;
-			case 2 : kernelMatrixmult2((float*)array_a,(float*)array_b,(float*)array_c,begin,end); break;
-			case 3 : kernelMatrixmult3((float*)array_a,(float*)array_b,(float*)array_c,begin,end); break;
-			case 4 : kernelMatrixmult4((float*)array_a,(float*)array_b,(float*)array_c,begin,end); break;
-		}
-		
-		//cerr << "input is array_a 2 is " << array_a[2] << "result for array_c 2 is " << array_c[2] << endl;	
-
+          if (numhpacc > 0) {
+               #ifdef HP
+                    //Use accelerators with HP ports configuration
+                    (debug_flag) && (fprintf(stderr,"<HPACC> LINES --- begin: %d; end: %d\n",begin, end));
+                    switch(id) {
+                         case 1 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.1.HP;\n"));
+                              kernelgemm1_hp((float *)array_a, (float *)array_a_noncache, (float *)array_b, (float *)array_b_noncache, (float *)array_c, (float *)array_c_noncache, mat_dim, file_desc_1, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                         case 2 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.2.HP;\n"));
+                              kernelgemm2_hp((float *)array_a, (float *)array_a_noncache, (float *)array_b, (float *)array_b_noncache, (float *)array_c, (float *)array_c_noncache, mat_dim, file_desc_2, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                         case 3 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.3.HP;\n"));
+                              kernelgemm3_hp((float *)array_a, (float *)array_a_noncache, (float *)array_b, (float *)array_b_noncache, (float *)array_c, (float *)array_c_noncache, mat_dim, file_desc_3, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                         case 4 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.4.HP;\n"));
+                              kernelgemm4_hp((float *)array_a, (float *)array_a_noncache, (float *)array_b, (float *)array_b_noncache, (float *)array_c, (float *)array_c_noncache, mat_dim, file_desc_4, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                    }
+               #endif
+          } else {
+               #ifdef HPC
+                    //Use accelerators with HPC ports configuration               
+                    (debug_flag) && (fprintf(stderr,"<HPCACC> LINES --- begin: %d; end: %d\n",begin,end));
+                    switch(id - numhpacc) {
+                         case 1 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.1.HPC;\n"));
+                              kernelgemm1_hpc((float *)array_a, (float *)array_b, (float *)array_c, mat_dim, file_desc_1, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                         case 2 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.2.HPC;\n"));
+                              kernelgemm2_hpc((float *)array_a, (float *)array_b, (float *)array_c, mat_dim, file_desc_2, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                         case 3 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.3.HPC;\n"));
+                              kernelgemm3_hpc((float *)array_a, (float *)array_b, (float *)array_c, mat_dim, file_desc_3, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                         case 4 : 
+                              (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.4.HPC;\n"));
+                              kernelgemm4_hpc((float *)array_a, (float *)array_b, (float *)array_c, mat_dim, file_desc_4, ioctl_flag, debug_flag, begin, end); 
+                              break;
+                    }
+               #endif
+          }
 	}
 
 	void OperatorCPU(int begin, int end) {
-		//cerr << "CPU: " << begin << " " << end  << endl;
 		bodies_C+=end-begin;
-
-		int i_m,j_m,k_m,i_block,j_block,k_block;
-		float *c_p, *b_p, *a_p;
-
-		//printf("operator CPU being %d end %d\n",begin,end);
-
-		for (i_m = begin; i_m < end; i_m += BLOCK_I) {
-		    for (j_m = 0; j_m < P; j_m += BLOCK) {
-		        for (k_m = 0; k_m < M; k_m += BLOCK) {
-		        	c_p = &array_c[i_m*P+j_m];
-		        	a_p = &array_a[i_m*M+k_m];
-		            for (i_block = 0; i_block < BLOCK_I; i_block++ ) {
-		            	b_p = &array_b[k_m*P+j_m];
-		                for (j_block = 0; j_block < BLOCK; j_block++) {
-		                    for (k_block = 0; k_block < BLOCK; k_block++) {
-		                        c_p[k_block] += a_p[j_block] * b_p[k_block];
-		                    }
-		                    b_p += P;
-		                }
-		                c_p += P;
-		                a_p += M;
-		            }
-		        }
-		    }
-		}
+          (debug_flag) && (fprintf(stderr,"<CPU> LINES --- begin: %d; end: %d\n",begin,end));
+          gemmCPU(begin,end);
+          //gemmFPGA_kernel((float *)array_a, (float *)array_b, (float *)array_c, mat_dim, begin, end);
+          //golden_MMM((float *)array_a, (float *)array_b, (float *)array_c, begin, end);
+          
 	}
 
 };
-//end class
-
-#endif

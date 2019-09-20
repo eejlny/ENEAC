@@ -1,8 +1,0 @@
-/* /home/eejlny/projects/framework/bnn_single_tests/_sds/p0/.boot/boot.bif */
-/*bootgen -arch zynqmp -image boot_bin.bif -w -process_bitstream bin*/
-/* linux */
-all:
-{
-  /home/eejlny/projects/sdsoc/matrix_mult_hpc_17_int3/_sds/p0/ipi/zcu102_es2.runs/impl_1/zcu102_es2_wrapper.bit
-}
-

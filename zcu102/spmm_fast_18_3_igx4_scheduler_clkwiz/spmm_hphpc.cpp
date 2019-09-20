@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /*
  Author: Mohammad Hosseinabady - mohammad@hosseinabady.com
  Date: 18 Feb 2019
  Description: Source code for the optimised SPMM accelerators
 */
+=======
+>>>>>>> pr/3
 void* __dso_handle;
 
 #include "spmm.h"

@@ -17,11 +17,11 @@
 #include "tbb/task_scheduler_init.h"
 #include "tbb/tick_count.h"
 
-//#define ENERGY
+#define ENERGY
 
 #ifdef ENERGY
-#include "../../energy-meter/energy_meter.h"
-#include "../../energy-meter/thread_funcs.cpp"
+#include "../../energy_meter/energy_meter.h"
+#include "../../energy_meter/thread_funcs.cpp"
 
 struct energy_sample *sample1;
 struct em_t final_em; // to get final energies
@@ -148,8 +148,8 @@ public:
 	/*Checks if a File already exists*/
 	bool isFile(char *filename){
 		//open file
-    std::ifstream ifile(filename);
-		return ifile;
+          std::ifstream ifile(filename);
+		//return ifile;
 	}
 };
 

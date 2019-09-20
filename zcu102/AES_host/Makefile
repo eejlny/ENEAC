@@ -1,66 +1,59 @@
+# Author: Kris Nikov - kris.nikov@bris.ac.uk
+# Date: 15 Jul 2019
+# Description: Makefile used to compile AES with energy monitoring and FPGA accelerator support for the ultrascale+ devboard
 
-# HOTSPOT
+hpc: LIB_aes = ./lib_aes/hpc
+hpc:	CONFIG_FLAG = -DHPC
 
-include common_variables.mk
+hp: LIB_aes = ./lib_aes/hp
+hp: CONFIG_FLAG = -DHP
 
-LIB_energy_arm = ../lib
-LIB_AES = ./LibAES
+#Specify software scheduler type
+SCHEDULER = -DMULTIDYNAMIC
+#SCHEDULER = -DMULTIHAP
 
-CXX= g++-4.9
+#Specify level of debug
+DEBUG_FLAGS = -DHWDEBUG
+#DEBUG_FLAGS = -DDEBUG 
+#DEBUG_FLAGS += -DDEBUG_CHUNKS
 
-CFLAGS+= -O2 -I .
-CFLAGS+= -Wno-unused-result -Wno-write-strings -Wno-deprecated-register
-CFLAGSA = $(CFLAGS) -std=c++11
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -I $(INCLUDE_TBB_ARM)
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -march=armv7-a -I $(INCLUDE_TBB_ARM)
-XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 -I $(INCLUDE_TBB_ARM) -I LibAES   -I ./Schedulers
-#XI_CFLAGS = $(CFLAGS) -DXILINX --std=gnu++11 --std=gnu++11 -mcpu=cortex-a53  -I LibkernelHotspot
-XI_CFLAGS+= -DNEON  -march=armv8-a+crypto -funsafe-math-optimizations -ftree-vectorize  -ftree-vectorizer-verbose=2 #If NEON SIMD instructions are to be used
-#XI_CFLAGS+= -mfloat-abi=soft
+LIB_energy_arm = ../lib_energy
 
+CXX= g++
 
-#CFALGS+= -DTRACE  # to get trace file output. Use ViTE to visualize
+CFLAGS = -O2 -I . 
 
-#LDFLAGS =  -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc # -lgopt
+CFLAGS += -Wno-unused-result -Wno-write-strings -Wno-deprecated-register
 
+XI_CFLAGS = $(CFLAGS) -DXILINX -DOFFLOAD --std=gnu++11 -mcpu=cortex-a53 $(CONFIG_FLAG) $(SCHEDULER) -I $(LIB_aes) -I $(LIB_energy_arm) -I ${CURDIR}  -I ./schedulers
 
-LDFLAGS =  -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc -z muldefs
+XI_CFLAGS += -DNEON -march=armv8-a+crypto -funsafe-math-optimizations -ftree-vectorize -ftree-vectorizer-verbose=2 #If NEON SIMD instructions are to be used
 
+#Comment out to disable debug information
+XI_CFLAGS += $(DEBUG_FLAGS)
 
-#XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm)
-#XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm) ./LibHotspot/libkernelnbody.a
-XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm) -L $(LIB_AES)
-#XI_LDFLAGS = $(LDFLAGS) -L $(LIB_TBB_ARM) -L $(LIB_energy_arm)
-XI_LDFLAGS+= -lenergy_meter_arm -lrt -lkernelAES # -lPVROCL
-#XI_LDFLAGS+= -lenergy_meter_arm -lrt
+LDFLAGS = -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc -z muldefs
 
-XI_PROGs= AES_DSW
-#NBODYV NBODY_FS
+XI_LDFLAGS = $(LDFLAGS) -L $(LIB_aes) -L $(LIB_energy_arm)
 
-PROFILING= HOTSPOT_PROCL
+XI_LDFLAGS += -lrt -lkernelaes -lenergy_meter_arm
 
-SOURCE= aes.cpp kernelAES.h
+XI_PROGs= AES
 
-.PHONY: all clean odroid libraries
+SOURCE= aes_top.cpp kernelaes.h
 
-all: odroid
+hpc hp: ultrascale
 
-libraries:
-	$(MAKE) -C ../energy-meter
+all: hp hpc
 
-odroid: libraries $(XI_PROGs)
+.PHONY: all
 
+ultrascale: $(XI_PROGs)
 
-AES_DSW: $(SOURCE)
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS) -DWRITERESULT #-DHOSTPRI_LINUX
-
-
-
-#define GPU_THRESHOLD 10
-
-mem_test: mem_test.cpp
-	$(CXX) -o $@ $< $(XI_CFLAGS) $(XI_LDFLAGS)
-
+AES: $(SOURCE)
+	$(CXX) -o $@ $<  $(XI_CFLAGS) $(XI_LDFLAGS) $(LDFLAGS)
+	
 clean:
-	rm -f  $(XI_PROGs) AES_SS
-	rm *.txt
+	${RM} -f $(XI_PROGs)
+	${RM} *.txt
+	${RM} *.dat

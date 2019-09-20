@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /*
  Author: Kris Nikov - kris.nikov@bris.ac.uk
  Date: 11 Jun 2019
  Description: Source code for the SPMM hardware interface library
 */
+=======
+>>>>>>> pr/3
 #include <stdio.h>
 #include <stdlib.h>
 #include <sds_lib.h>

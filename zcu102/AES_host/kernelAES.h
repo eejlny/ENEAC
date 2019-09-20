@@ -1,55 +1,43 @@
-#ifndef KERNELAES_H_
-#define KERNELAES_H_
+void kernelaes1_hp(
+uint8_t *state,
+uint8_t *state_noncache,
+uint8_t *cipher,
+uint8_t *cipher_noncache,
+uint8_t ekey_noncache[240],
+int file_desc,
+int ioctl_flag,
+int debug_flag,
+int begin,
+int end);
 
-void kernelAES1(
+void kernelaes2_hp(
+uint8_t *state,
+uint8_t *state_noncache,
+uint8_t *cipher,
+uint8_t *cipher_noncache,
+uint8_t ekey_noncache[240],
+int file_desc,
+int ioctl_flag,
+int debug_flag,
+int begin,
+int end);
+
+void kernelaes1_hpc(
 uint8_t *state,
 uint8_t *cipher,
 uint8_t ekey[240],
-////int *interrupt,
-////int *status,
-////int file_desc,
+int file_desc,
+int ioctl_flag,
+int debug_flag,
 int begin,
-int end
-//unsigned int core_count
-);
+int end);
 
-void kernelAES2(
+void kernelaes2_hpc(
 uint8_t *state,
 uint8_t *cipher,
 uint8_t ekey[240],
-////int *interrupt,
-////int *status,
-////int file_desc,
+int file_desc,
+int ioctl_flag,
+int debug_flag,
 int begin,
-int end
-//unsigned int core_count
-);
-
-void kernelAES3(
-uint8_t *state,
-uint8_t *cipher,
-uint8_t ekey[240],
-////int *interrupt,
-////int *status,
-////int file_desc,
-int begin,
-int end
-//unsigned int core_count
-);
-
-void kernelAES4(
-uint8_t *state,
-uint8_t *cipher,
-uint8_t ekey[240],
-////int *interrupt,
-////int *status,
-////int file_desc,
-int begin,
-int end
-//unsigned int core_count
-);
-
-
-
-
-#endif 
+int end);

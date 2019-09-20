@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /*
  Author: Kris Nikov - kris.nikov@bris.ac.uk
  Date: 11 Jun 2019
  Description: Header for the SPMM harware interface library
 */
+=======
+>>>>>>> pr/3
 #ifndef KERNELSPMM_H_
 #define KERNELSPMM_H_
 

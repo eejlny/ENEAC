@@ -97,14 +97,14 @@ double overhead_d2h = 0.0;
 double overhead_td = 0.0;
 #endif
 
-int set_thread_affinity_CORE(pthread_t th, int cpu)
+/*int set_thread_affinity_CORE(pthread_t th, int cpu)
 {
 	cpu_set_t mask;
 	__CPU_ZERO_S(sizeof(cpu_set_t),&mask);
 	__CPU_SET_S(cpu,sizeof(cpu_set_t), &mask);
 
 	return pthread_setaffinity_np(th, sizeof(cpu_set_t), &mask);
-}
+}*/
 
 /*****************************************************************************
 * Heterogeneous Scheduler
@@ -249,7 +249,7 @@ public:
 
 		if(bundle->type != CPU){
 			// GPU WORK
-			#ifndef NDEBUG
+			#ifdef DEBUG
 			cerr << "launchGPU(): begin: " << bundle->begin << " end: " << bundle->end << endl;
 			#endif
 			#ifdef TRACER
@@ -292,7 +292,7 @@ public:
 
 	}else{
 		// CPU WORK
-		#ifndef NDEBUG
+		#ifdef DEBUG
 		cerr << "launchCPU(): begin: " << bundle->begin << " end: " << bundle->end << endl;
 		#endif
 		#ifdef TRACER
@@ -377,7 +377,7 @@ public:
 	/*The main function to be implemented*/
 	template<class T>
 	void heterogeneous_parallel_for(int begin, int end, T* body){
-		#ifndef NDEBUG
+		#ifdef DEBUG
 		cerr << "Heterogeneous Parallel For Dynamic " << nCPUs << " , " << nGPUs << ", " << chunkGPU << endl;
 		#endif
 		/*Preparing pipeline*/

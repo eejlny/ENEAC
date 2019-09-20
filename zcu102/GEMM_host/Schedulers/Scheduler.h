@@ -17,9 +17,30 @@
 #include "tbb/task_scheduler_init.h"
 #include "tbb/tick_count.h"
 
+#define ENERGY
+
+#ifdef ENERGY
+#include "../../energy_meter/energy_meter.h"
+#include "../../energy_meter/thread_funcs.cpp"
+
+struct energy_sample *sample1;
+struct em_t final_em; // to get final energies
+#else
+int set_thread_affinity_CORE(pthread_t th, int cpu)
+{
+	cpu_set_t mask;
+	__CPU_ZERO_S(sizeof(cpu_set_t),&mask);
+	__CPU_SET_S(cpu,sizeof(cpu_set_t), &mask);
+
+	return pthread_setaffinity_np(th, sizeof(cpu_set_t), &mask);
+}
+#endif
+
+
 #ifdef PJTRACER
 #include "pfortrace.h"
 #endif
+
 
 
 // using namespace std;
@@ -101,6 +122,12 @@ public:
 
 	/*Sets the start mark of energy and time*/
 	void startTimeAndEnergy(){
+		printf("starting time energy\n");
+		#ifdef ENERGY
+	  		sample1=energy_meter_init(50, 0  /*0=no debug*/);  // sample period 100 miliseconds
+	  		//power_meter_idle(sample1); //get idle power
+	  		energy_meter_start(sample1);  // starts sampling thread
+		#endif
 		start = tick_count::now();
 	}
 
@@ -108,14 +135,21 @@ public:
 	void endTimeAndEnergy(){
 		end = tick_count::now();
 
+		#ifdef ENERGY
+	  		energy_meter_read(sample1,&final_em);  // final & total
+	  		energy_meter_stop(sample1);  	// stops sampling
+	  		energy_meter_printf(sample1, stdout);  // print total results
+	  		energy_meter_destroy(sample1);     // clean up everything
+		#endif
+
 		runtime = (end-start).seconds()*1000;
 	}
 
 	/*Checks if a File already exists*/
 	bool isFile(char *filename){
 		//open file
-    std::ifstream ifile(filename);
-		return ifile;
+          std::ifstream ifile(filename);
+		//return ifile;
 	}
 };
 
