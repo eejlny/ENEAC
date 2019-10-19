@@ -8,12 +8,16 @@ LIBRARY = libkernelaes.a
 hpc: SDSFLAGS = -sds-proc a53 -sds-pf ${PLATFORM} \
 	-sds-hw  aes1_hpc aes_hphpc.cpp  -clkid 0 -sds-end\
 	-sds-hw  aes2_hpc aes_hphpc.cpp  -clkid 0 -sds-end\
+     -sds-hw  aes3_hpc aes_hphpc.cpp  -clkid 0 -sds-end\
+     -sds-hw  aes4_hpc aes_hphpc.cpp  -clkid 0 -sds-end\
 	-Wno-unused-label -Wno-unused-function
 hpc:	CONFIG_FLAG = -DHPC
      
 hp: SDSFLAGS = -sds-proc a53 -sds-pf ${PLATFORM} \
 	-sds-hw  aes1_hp aes_hphpc.cpp  -clkid 0 -sds-end\
 	-sds-hw  aes2_hp aes_hphpc.cpp  -clkid 0 -sds-end\
+     -sds-hw  aes3_hp aes_hphpc.cpp  -clkid 0 -sds-end\
+     -sds-hw  aes4_hp aes_hphpc.cpp  -clkid 0 -sds-end\
 	-Wno-unused-label -Wno-unused-function
 hp: CONFIG_FLAG = -DHP
 

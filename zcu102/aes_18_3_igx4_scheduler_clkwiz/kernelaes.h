@@ -8,7 +8,7 @@ int file_desc,
 int ioctl_flag,
 int debug_flag,
 int begin,
-int end)
+int end);
 
 void kernelaes2_hp(
 uint8_t *state,
@@ -20,7 +20,31 @@ int file_desc,
 int ioctl_flag,
 int debug_flag,
 int begin,
-int end)
+int end);
+
+void kernelaes3_hp(
+uint8_t *state,
+uint8_t *state_noncache,
+uint8_t *cipher,
+uint8_t *cipher_noncache,
+uint8_t ekey_noncache[240],
+int file_desc,
+int ioctl_flag,
+int debug_flag,
+int begin,
+int end);
+
+void kernelaes4_hp(
+uint8_t *state,
+uint8_t *state_noncache,
+uint8_t *cipher,
+uint8_t *cipher_noncache,
+uint8_t ekey_noncache[240],
+int file_desc,
+int ioctl_flag,
+int debug_flag,
+int begin,
+int end);
 
 void kernelaes1_hpc(
 uint8_t *state,
@@ -30,7 +54,7 @@ int file_desc,
 int ioctl_flag,
 int debug_flag,
 int begin,
-int end)
+int end);
 
 void kernelaes2_hpc(
 uint8_t *state,
@@ -40,4 +64,24 @@ int file_desc,
 int ioctl_flag,
 int debug_flag,
 int begin,
-int end)
+int end);
+
+void kernelaes3_hpc(
+uint8_t *state,
+uint8_t *cipher,
+uint8_t ekey[240],
+int file_desc,
+int ioctl_flag,
+int debug_flag,
+int begin,
+int end);
+
+void kernelaes4_hpc(
+uint8_t *state,
+uint8_t *cipher,
+uint8_t ekey[240],
+int file_desc,
+int ioctl_flag,
+int debug_flag,
+int begin,
+int end);

@@ -29,6 +29,7 @@ int main(int argc, char* argv[]) {
 	Body body;
 	Params p;
      
+          
      if (argc < 7 || argc > 8)
 		usage(argc, argv);
 	if(  atoi(argv[2]) < 0 || atoi(argv[2]) > 4 
@@ -50,7 +51,7 @@ int main(int argc, char* argv[]) {
   		Dynamic * hs = Dynamic::getInstance(&p);
   	#endif
 
-     ioctl_flag = atoi(argv[7]);
+     ioctl_flag = atoi(argv[6]);
 
 	fp = fopen(infile, "rb");
 	if (!fp) {
@@ -58,8 +59,9 @@ int main(int argc, char* argv[]) {
 		exit(1);
 	}
 
-	block_size = fsize(fp)/16; //number of 16 byte blocks in file
-	(debug_flag) && (printf("The number of blocks to encrypt is %d;\n",block_size));
+	block_size = fsize(fp)/16; //number of 16 byte blocks in file     
+          
+     (debug_flag) && (printf("The number of blocks to encrypt is %d;\n",block_size));
 	(debug_flag) && (printf("The chunk size for FPGA as a number of blocks is %d;\n",p.gpuChunk));
 
 	ekey = (uint8_t *)sds_alloc(240 * sizeof(uint8_t));
@@ -86,15 +88,18 @@ int main(int argc, char* argv[]) {
      
      (debug_flag) && (printf("Memories allocated;\n"));
 
-	keyexpansion(key, ekey);     
+	keyexpansion(key, ekey);
+     
      if (numhpacc > 0)
           keyexpansion(key, ekey_noncache);     
      (debug_flag) && (printf("Key expanded;\n"));
           
 	read_input(state, fp);
-     (debug_flag) && (printf("Input read;\n"));
-
+     //read_input(state_noncache, fp);
      
+     (debug_flag) && (printf("Input read;\n"));
+     
+
      //Interrupt device drivers defined in Body.h
      //Only open if ioctl_flag is enabled
      if (ioctl_flag > 0){
@@ -112,12 +117,26 @@ int main(int argc, char* argv[]) {
                exit(-1);
           } else {
                (debug_flag) && (fprintf(stderr,"Driver successfully opened: %s\n", DRIVER_FILE_NAME_2));
-          };    
+          };
+          file_desc_3 = open(DRIVER_FILE_NAME_3, O_RDWR);	//Open interrupt driver 3
+          if (file_desc_3 < 0) {
+               fprintf(stderr,"Can't open driver file: %s\n", DRIVER_FILE_NAME_3);
+               exit(-1);
+          } else {
+          (debug_flag) && (fprintf(stderr,"Driver successfully opened: %s\n", DRIVER_FILE_NAME_3));
+          };  
+          file_desc_4 = open(DRIVER_FILE_NAME_4, O_RDWR);	//Open interrupt driver 4
+          if (file_desc_4 < 0) {
+               fprintf(stderr,"Can't open driver file: %s\n", DRIVER_FILE_NAME_4);
+               exit(-1);
+          } else {
+               (debug_flag) && (fprintf(stderr,"Driver successfully opened: %s\n", DRIVER_FILE_NAME_4));
+          };  
      }
      
      cout << "AES Simulation: "<< block_size << ", " << p.numcpus << ", " << p.numgpus << endl;
 
-     // Perform the computation     
+     //Perform the computation     
      int iters = 1;
      hs->startTimeAndEnergy();
 	for (int step = 0; step < iters; step++){
@@ -138,12 +157,15 @@ int main(int argc, char* argv[]) {
           close(file_desc_1);
           (debug_flag) && (fprintf(stderr,"Closing driver: %s\n", DRIVER_FILE_NAME_2));
           close(file_desc_2);
+          (debug_flag) && (fprintf(stderr,"Closing driver: %s\n", DRIVER_FILE_NAME_3));
+          close(file_desc_3);
+          (debug_flag) && (fprintf(stderr,"Closing driver: %s\n", DRIVER_FILE_NAME_4));
+          close(file_desc_4);
      }     
 
      // Write final output to output file
-	if (argv[7]) {
+	if (argv[7])
           write_output(cipher, argv[7]);
-     }
      
      freemem();
 

@@ -19,18 +19,15 @@ DEBUG_FLAGS = -DHWDEBUG
 
 LIB_energy_arm = ../lib_energy
 
-CXX= g++
+CXX= g++-4.9
 
 CFLAGS = -O2 -I . 
-
 CFLAGS += -Wno-unused-result -Wno-write-strings -Wno-deprecated-register
-
 XI_CFLAGS = $(CFLAGS) -DXILINX -DOFFLOAD --std=gnu++11 -mcpu=cortex-a53 $(CONFIG_FLAG) $(SCHEDULER) -I $(LIB_aes) -I $(LIB_energy_arm) -I ${CURDIR}  -I ./schedulers
-
 XI_CFLAGS += -DNEON -march=armv8-a+crypto -funsafe-math-optimizations -ftree-vectorize -ftree-vectorizer-verbose=2 #If NEON SIMD instructions are to be used
 
 #Comment out to disable debug information
-XI_CFLAGS += $(DEBUG_FLAGS)
+#XI_CFLAGS += $(DEBUG_FLAGS)
 
 LDFLAGS = -ltbb -pthread -ltbbmalloc_proxy -ltbbmalloc -z muldefs
 

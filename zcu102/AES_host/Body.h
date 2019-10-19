@@ -43,6 +43,14 @@ class Body {
                                    (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.2.HP;\n"));                              
                                    kernelaes2_hp((uint8_t*)state,(uint8_t*)state_noncache,(uint8_t*)cipher,(uint8_t*)cipher_noncache,ekey_noncache, file_desc_2, ioctl_flag, debug_flag, (begin), (end)); 
                                    break;
+                              case 3 : 
+                                   (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.3.HP;\n"));                              
+                                   kernelaes3_hp((uint8_t*)state,(uint8_t*)state_noncache,(uint8_t*)cipher,(uint8_t*)cipher_noncache,ekey_noncache, file_desc_3, ioctl_flag, debug_flag, (begin), (end)); 
+                                   break;
+                              case 4 : 
+                                   (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.4.HP;\n"));                              
+                                   kernelaes4_hp((uint8_t*)state,(uint8_t*)state_noncache,(uint8_t*)cipher,(uint8_t*)cipher_noncache,ekey_noncache, file_desc_4, ioctl_flag, debug_flag, (begin), (end)); 
+                                   break;
                          }
                     #endif
                } else {
@@ -52,12 +60,26 @@ class Body {
                          switch(id - numhpacc) {
                               case 1 : 
                                    (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.1.HPC;\n"));
-                                   kernelaes1_hpc((uint8_t*)state,(uint8_t*)cipher,ekey, file_desc_1, ioctl_flag, debug_flag, (begin), (end)); 
+                                   kernelaes1_hpc((uint8_t*)state,(uint8_t*)cipher,ekey, file_desc_1, ioctl_flag, debug_flag, (begin), (end));
+                                   //kernelaes1_hpc((uint8_t*)state_noncache,(uint8_t*)cipher,ekey_noncache, file_desc_1, ioctl_flag, debug_flag, (begin), (end));
                                    break;
                               case 2 : 
                                    (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.2.HPC;\n"));
                                    kernelaes2_hpc((uint8_t*)state,(uint8_t*)cipher,ekey, file_desc_2, ioctl_flag, debug_flag, (begin), (end)); 
+                                   //kernelaes2_hpc((uint8_t*)state_noncache,(uint8_t*)cipher,ekey_noncache, file_desc_2, ioctl_flag, debug_flag, (begin), (end));
+
                                    break;    
+                              case 3 : 
+                                   (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.3.HPC;\n"));
+                                   kernelaes3_hpc((uint8_t*)state,(uint8_t*)cipher,ekey, file_desc_3, ioctl_flag, debug_flag, (begin), (end)); 
+                                   //kernelaes3_hpc((uint8_t*)state_noncache,(uint8_t*)cipher,ekey_noncache, file_desc_3, ioctl_flag, debug_flag, (begin), (end));
+
+                                   break;
+                              case 4 : 
+                                   (debug_flag) && (fprintf(stderr,"DBG SCHEDULER.4.HPC;\n"));
+                                   kernelaes4_hpc((uint8_t*)state,(uint8_t*)cipher,ekey, file_desc_4, ioctl_flag, debug_flag, (begin), (end)); 
+                                   //kernelaes4_hpc((uint8_t*)state_noncache,(uint8_t*)cipher,ekey_noncache, file_desc_4, ioctl_flag, debug_flag, (begin), (end));
+                                   break;
                          }
                     #endif     
                }

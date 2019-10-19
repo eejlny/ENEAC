@@ -31,6 +31,18 @@ const unsigned int CU=4;
      data_t *cipher,
      uint8_t ekey[240],
      unsigned int block_size);
+     
+     void aes3_hp(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size);
+
+     void aes4_hp(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size);
 
 #endif
 
@@ -43,6 +55,18 @@ const unsigned int CU=4;
      unsigned int block_size);
 
      void aes2_hpc(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size);
+     
+     void aes3_hpc(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size);
+
+     void aes4_hpc(
      data_t *state,
      data_t *cipher,
      uint8_t ekey[240],

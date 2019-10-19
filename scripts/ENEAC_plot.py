@@ -103,10 +103,12 @@ def main(argv):
     multihap_aggregated_results = []
     
     #rc('text', usetex=True)
-    #rc('axes', linewidth=2)
     rc('font', weight='bold')
-    rc('font', size='12')
+    rc('font', size='25')
+    rc('axes', labelsize='35')
+    #rc('legend', fontsize='11')    # legend fontsize
     #rcParams['text.latex.preamble'] = [r'\usepackage{sfmath} \boldmath']
+    my_dpi=96    
         
     try:
         opts, args = getopt.getopt(argv,"hp:i:d:e:j:m:u:o:",["ptype=","ifile=","idir=","idfile=","iddir=","idmul=","mhfile=","ofile="])
@@ -754,17 +756,21 @@ def main(argv):
             if cpu_cores[num] == 0 and fpga_hpacc[num] == 0 and fpga_hpcacc[num] == 0:
                 config_labels.append("IDLE")
             else:
-                config_labels.append(sched_type[num]+"+IOCTL(" + ioctl_flag[num] + "):"+str(cpu_cores[num])+"C+"+str(fpga_hpacc[num])+"HP+"+str(fpga_hpcacc[num])+"HPC")
+                #config_labels.append(sched_type[num]+"+IOCTL(" + ioctl_flag[num] + "):"+str(cpu_cores[num])+"C+"+str(fpga_hpacc[num])+"HP+"+str(fpga_hpcacc[num])+"HPC")
+                config_labels.append("("+str(num+1)+")")
                 
         n_groups = len(inputfile)
         cpu_power_np = np.array(cpu_power)
         fpga_power_np = np.array(fpga_power)
         cpu_energy_np = np.array(cpu_energy)
-        fpga_energy_np = np.array(fpga_energy)        
+        fpga_energy_np = np.array(fpga_energy)
+        
+        print "Power: " +  str(cpu_power_np+fpga_power_np) + '\n'
+        print "Energy: " +  str(cpu_energy_np+fpga_energy_np) + '\n'
             
         rects = []
         
-        fig, ax1 = plt.subplots()
+        fig, ax1 = plt.subplots(figsize=(13,9))
 
         index = np.arange(n_groups) 
         color=iter(cm.rainbow(np.linspace(0,1,num+1)))   
@@ -796,9 +802,9 @@ def main(argv):
         #ax1handles.append(custom_arrow)
         #ax1.set_zorder(1)
         ax1.legend(handles=ax1handles,loc=1,handler_map={mlines.Line2D : ArrowHandler()},fancybox=True, framealpha=0.75)
-
-        fig.tight_layout()
+        fig.tight_layout()        
         plt.show()
+
         
         if outputfile != '':
             pp = PdfPages(outputfile)
@@ -864,9 +870,10 @@ def main(argv):
         for num, conf in enumerate(configs): 
             print "Configuration " + str(num+1) + ": " + conf       
             print "Throughputs: " + str(conf_throughput[num])
-            print "Chunk sizes: " + str(conf_chunk_size[num]) + '\n'          
-    
-        fig, ax = plt.subplots()
+            print "Chunk sizes: " + str(conf_chunk_size[num])     
+            print "Max: " + str(max(conf_throughput[num])) + '\n'
+        
+        fig, ax = plt.subplots(figsize=(1300/my_dpi,900/my_dpi))
         
         color=iter(cm.rainbow(np.linspace(0,1,num+1)))
         
@@ -880,22 +887,24 @@ def main(argv):
             marker_x = [i[0] for i in temparr][marker_index]
             #templine = ax.plot([i[0] for i in temparr],[i[1] for i in temparr], label=configs[num])
             c=next(color)
-            templine = mlines.Line2D([i[0] for i in temparr],[i[1] for i in temparr], label=configs[num], color = c)
+            #templine = mlines.Line2D([i[0] for i in temparr],[i[1] for i in temparr], label=configs[num], color = c)
+            templine = mlines.Line2D([i[0] for i in temparr],[i[1] for i in temparr], label="("+str(num+1)+")", color = c, lw='5')
             ax.add_line(templine)
             #ax.plot(marker_x, marker_y, marker='*', markersize='10', alpha=1, color=templine.get_color())
-            ax.semilogx(marker_x,marker_y,marker='*', markersize='10', alpha=1, color=templine.get_color(),basex=2)
+            ax.semilogx(marker_x,marker_y,marker='*', markersize='25', alpha=1, color=templine.get_color(),basex=2)
         
         #bins_np = np.array(range(min(map(min, conf_chunk_size)),max(map(max, conf_chunk_size))+8,8)) 
         plt.xticks(conf_chunk_size[0])
         ax.set_xticklabels(conf_chunk_size[0],fontsize='small',rotation='45')
         #ax.set(xlabel='Chunk Size [#]', ylabel='Execution Time [ms]')
         ax.set_xlabel('Chunk Size [#]', fontweight='bold')
-        ax.set_ylabel('Throughput [workload/ms]', fontweight='bold')
+        ax.set_ylabel('Throughput [temps/ms]', fontweight='bold')
        
-        custom_line = mlines.Line2D([], [], color='black', marker='*', markersize='10', label='Highest Point Marker')
+        custom_line = mlines.Line2D([], [], color='black', marker='*', markersize='25', label='Peak', lw='5')
         axhandles, dud = ax.get_legend_handles_labels()
         axhandles.append(custom_line)
-        ax.legend(handles=axhandles,loc=0)        
+        #ax.legend(handles=axhandles,loc=0)
+        ax.legend(handles=axhandles,loc=2,ncol=1)#(len(configs)+1)/2)                
         ax.grid()
         ax.margins(x=0)
 
@@ -904,7 +913,7 @@ def main(argv):
         
         if outputfile != '':
             pp = PdfPages(outputfile)
-            pp.savefig(fig) 
+            pp.savefig(fig,dpi=my_dpi) 
             pp.close()         
             
     #Plotting part of the script 

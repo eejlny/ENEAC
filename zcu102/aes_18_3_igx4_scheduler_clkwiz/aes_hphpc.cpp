@@ -4,12 +4,9 @@
 
 #include "aes.h"
 
-extern "C"
-{
-void *__dso_handle = NULL;
+extern "C" {
+     void *__dso_handle = NULL;
 }
-
-//block size is the number of bytes to process
 
 void aes_wrapper(data_t *state,data_t *cipher,uint8_t ekey[240],uint32_t byte_count);
 void addroundkey(data_stream_t &state,uint8_t iteration, data_stream_t &result,uint8_t ekey[240],uint32_t byte_count);
@@ -20,12 +17,11 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
 #ifdef HP
 
-     #pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
-     #pragma SDS data copy(state[0:(block_size/16)])
-     #pragma SDS data copy(cipher[0:(block_size/16)])
+     #pragma SDS data sys_port(state:HP0,cipher:HP0)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
      #pragma SDS data access_pattern(state:SEQUENTIAL)
      #pragma SDS data access_pattern(cipher:SEQUENTIAL)
-     #pragma SDS data sys_port(state:HP0,cipher:HP0)
      void aes1_hp(
      data_t *state,
      data_t *cipher,
@@ -42,19 +38,18 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
           #pragma HLS array_partition variable=ekey_buf complete
 
-          for(j=0; j<240; j++) {
+          for(j=0; j<240; j++)
                #pragma HLS PIPELINE
                ekey_buf[j] = ekey[j];
-          }
+          
           aes_wrapper(state,cipher,ekey_buf,block_size);
      }
 
-     #pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
-     #pragma SDS data copy(state[0:(block_size/16)])
-     #pragma SDS data copy(cipher[0:(block_size/16)])
+     #pragma SDS data sys_port(state:HP1,cipher:HP1)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
      #pragma SDS data access_pattern(state:SEQUENTIAL)
      #pragma SDS data access_pattern(cipher:SEQUENTIAL)
-     #pragma SDS data sys_port(state:HP1,cipher:HP1)
      void aes2_hp(
      data_t *state,
      data_t *cipher,
@@ -71,10 +66,66 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
           #pragma HLS array_partition variable=ekey_buf complete
 
-          for(j=0; j<240; j++) {
+          for(j=0; j<240; j++)
                #pragma HLS PIPELINE
                ekey_buf[j] = ekey[j];
-          }
+
+          aes_wrapper(state,cipher,ekey_buf,block_size);
+     }
+     
+     #pragma SDS data sys_port(state:HP2,cipher:HP2)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
+     #pragma SDS data access_pattern(state:SEQUENTIAL)
+     #pragma SDS data access_pattern(cipher:SEQUENTIAL)
+     void aes3_hp(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size) {
+          int i,j;
+          uint8_t iteration = 0;
+          uint8_t x,y;
+
+          data_stream_t state_stream;
+          data_stream_t cipher_stream;
+
+          uint8_t ekey_buf[240];
+
+          #pragma HLS array_partition variable=ekey_buf complete
+
+          for(j=0; j<240; j++)
+               #pragma HLS PIPELINE
+               ekey_buf[j] = ekey[j];
+
+          aes_wrapper(state,cipher,ekey_buf,block_size);
+     }
+     
+     #pragma SDS data sys_port(state:HP3,cipher:HP3)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
+     #pragma SDS data access_pattern(state:SEQUENTIAL)
+     #pragma SDS data access_pattern(cipher:SEQUENTIAL)
+     void aes4_hp(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size) {
+          int i,j;
+          uint8_t iteration = 0;
+          uint8_t x,y;
+
+          data_stream_t state_stream;
+          data_stream_t cipher_stream;
+
+          uint8_t ekey_buf[240];
+
+          #pragma HLS array_partition variable=ekey_buf complete
+
+          for(j=0; j<240; j++)
+               #pragma HLS PIPELINE
+               ekey_buf[j] = ekey[j];
+
           aes_wrapper(state,cipher,ekey_buf,block_size);
      }
 
@@ -82,12 +133,13 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
 #ifdef HPC
 
-     #pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
-     #pragma SDS data copy(state[0:(block_size/16)])
-     #pragma SDS data copy(cipher[0:(block_size/16)])
+     #pragma SDS data sys_port(state:HPC0,cipher:HPC0,ekey:HPC0)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
+     #pragma SDS data zero_copy(ekey[0:(240)])
      #pragma SDS data access_pattern(state:SEQUENTIAL)
      #pragma SDS data access_pattern(cipher:SEQUENTIAL)
-     #pragma SDS data sys_port(state:HPC0,cipher:HPC0)
+     #pragma SDS data access_pattern(ekey:SEQUENTIAL)
      void aes1_hpc(
      data_t *state,
      data_t *cipher,
@@ -104,19 +156,20 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
           #pragma HLS array_partition variable=ekey_buf complete
 
-          for(j=0; j<240; j++) {
+          for(j=0; j<240; j++)
                #pragma HLS PIPELINE
                ekey_buf[j] = ekey[j];
-          }
+
           aes_wrapper(state,cipher,ekey_buf,block_size);
      }
 
-     #pragma SDS data data_mover(state:AXIDMA_SG, cipher:AXIDMA_SG)
-     #pragma SDS data copy(state[0:(block_size/16)])
-     #pragma SDS data copy(cipher[0:(block_size/16)])
+     #pragma SDS data sys_port(state:HPC1,cipher:HPC1,ekey:HPC1)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
+     #pragma SDS data zero_copy(ekey[0:(240)])
      #pragma SDS data access_pattern(state:SEQUENTIAL)
      #pragma SDS data access_pattern(cipher:SEQUENTIAL)
-     #pragma SDS data sys_port(state:HPC1,cipher:HPC1)
+     #pragma SDS data access_pattern(ekey:SEQUENTIAL)
      void aes2_hpc(
      data_t *state,
      data_t *cipher,
@@ -133,10 +186,70 @@ void stream2array(data_stream_t &state, data_t *result, uint32_t byte_count);
 
           #pragma HLS array_partition variable=ekey_buf complete
 
-          for(j=0; j<240; j++) {
+          for(j=0; j<240; j++)
                #pragma HLS PIPELINE
                ekey_buf[j] = ekey[j];
-          }
+
+          aes_wrapper(state,cipher,ekey_buf,block_size);
+     }
+     
+     #pragma SDS data sys_port(state:HPC0,cipher:HPC0,ekey:HPC0)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
+     #pragma SDS data zero_copy(ekey[0:(240)])
+     #pragma SDS data access_pattern(state:SEQUENTIAL)
+     #pragma SDS data access_pattern(cipher:SEQUENTIAL)
+     #pragma SDS data access_pattern(ekey:SEQUENTIAL)
+     void aes3_hpc(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size) {
+          int i,j;
+          uint8_t iteration = 0;
+          uint8_t x,y;
+
+          data_stream_t state_stream;
+          data_stream_t cipher_stream;
+
+          uint8_t ekey_buf[240];
+
+          #pragma HLS array_partition variable=ekey_buf complete
+
+          for(j=0; j<240; j++)
+               #pragma HLS PIPELINE
+               ekey_buf[j] = ekey[j];
+
+          aes_wrapper(state,cipher,ekey_buf,block_size);
+     }
+     
+     #pragma SDS data sys_port(state:HPC1,cipher:HPC1,ekey:HPC1)
+     #pragma SDS data zero_copy(state[0:(block_size/16)])
+     #pragma SDS data zero_copy(cipher[0:(block_size/16)])
+     #pragma SDS data zero_copy(ekey[0:(240)])
+     #pragma SDS data access_pattern(state:SEQUENTIAL)
+     #pragma SDS data access_pattern(cipher:SEQUENTIAL)
+     #pragma SDS data access_pattern(ekey:SEQUENTIAL)
+     void aes4_hpc(
+     data_t *state,
+     data_t *cipher,
+     uint8_t ekey[240],
+     unsigned int block_size) {
+          int i,j;
+          uint8_t iteration = 0;
+          uint8_t x,y;
+
+          data_stream_t state_stream;
+          data_stream_t cipher_stream;
+
+          uint8_t ekey_buf[240];
+
+          #pragma HLS array_partition variable=ekey_buf complete
+
+          for(j=0; j<240; j++)
+               #pragma HLS PIPELINE
+               ekey_buf[j] = ekey[j];
+
           aes_wrapper(state,cipher,ekey_buf,block_size);
      }
      
@@ -310,49 +423,42 @@ uint32_t byte_count) {
 	#pragma HLS array_partition variable=result_temp complete
 	#pragma HLS array_partition variable=state_array complete
 
-	for (unsigned int i = 0; i < byte_count/16; i++)
-	{
-    #pragma HLS loop_tripcount min=1 max=1024
-	state_temp = state.read();
+	for (unsigned int i = 0; i < byte_count/16; i++) {
+          #pragma HLS loop_tripcount min=1 max=1024
+          state_temp = state.read();
 
+          for(unsigned int s=0;s<16;s++)
+               #pragma HLS unroll
+               state_array[s] = state_temp.range(s*8+7,s*8);
 
-	for(unsigned int s=0;s<16;s++)
-	{
-		#pragma HLS unroll
-		state_array[s] = state_temp.range(s*8+7,s*8);
-	}
+          #pragma HLS PIPELINE II=INI_VAL
+          loop_sb1 : for(x=0;x<4;x++)
+               loop_sb2 : for(y=0;y<4;y++) {
+                    uint8_t state_byte = state_array[x*4+y];
+                    result_temp[x*4+y] = sbox[state_byte];
+               }
+          
+          state_temp2.range(7,0) = result_temp[0];
+          state_temp2.range(15,8) = result_temp[5];
+          state_temp2.range(23,16) = result_temp[10];
+          state_temp2.range(31,24) = result_temp[15];
 
+          state_temp2.range(39,32) = result_temp[4];
+          state_temp2.range(47,40) = result_temp[9];
+          state_temp2.range(55,48) = result_temp[14];
+          state_temp2.range(63,56) = result_temp[3];
 
-     #pragma HLS PIPELINE II=INI_VAL
-	loop_sb1 : for(x=0;x<4;x++){
-		loop_sb2 : for(y=0;y<4;y++){
-			uint8_t state_byte = state_array[x*4+y];
-			result_temp[x*4+y] = sbox[state_byte];
-		}//end y loop
-	}//end x loop
-	//row_shift_enc
+          state_temp2.range(71,64) = result_temp[8];
+          state_temp2.range(87,80) = result_temp[2];
+          state_temp2.range(79,72) = result_temp[13];
+          state_temp2.range(95,88) = result_temp[7];
 
-	state_temp2.range(7,0) = result_temp[0];
-	state_temp2.range(15,8) = result_temp[1];
-	state_temp2.range(23,16) = result_temp[2];
-	state_temp2.range(31,24) = result_temp[3];
+          state_temp2.range(103,96) = result_temp[12];
+          state_temp2.range(127,120) = result_temp[11];
+          state_temp2.range(119,112) = result_temp[6];
+          state_temp2.range(111,104) = result_temp[1];
 
-	state_temp2.range(39,32) = result_temp[5];
-	state_temp2.range(47,40) = result_temp[6];
-	state_temp2.range(55,48) = result_temp[7];
-	state_temp2.range(63,56) = result_temp[4];
-
-	state_temp2.range(71,64) = result_temp[10];
-	state_temp2.range(87,80) = result_temp[8];
-	state_temp2.range(79,72) = result_temp[11];
-	state_temp2.range(95,88) = result_temp[9];
-
-	state_temp2.range(103,96) = result_temp[15];
-	state_temp2.range(127,120) = result_temp[14];
-	state_temp2.range(119,112) = result_temp[13];
-	state_temp2.range(111,104) = result_temp[12];
-
-	result.write(state_temp2);
+          result.write(state_temp2);
 	}
 }
 
@@ -360,10 +466,9 @@ void array2stream(
 data_t *state,
 data_stream_t &result,
 uint32_t byte_count) {
-	for (unsigned int i = 0; i < byte_count/16; i++)
-	{
-    #pragma HLS loop_tripcount min=1 max=1024
-	#pragma HLS PIPELINE II=INI_VAL
+	for (unsigned int i = 0; i < byte_count/16; i++) {
+          #pragma HLS loop_tripcount min=1 max=1024
+          #pragma HLS PIPELINE II=INI_VAL
 		data_t state_buf = *(state+i);
 		result.write(state_buf);
 	}
@@ -373,10 +478,9 @@ void stream2array(
 data_stream_t &state,
 data_t *result,
 uint32_t byte_count) {
-	for (unsigned int i = 0; i < byte_count/16; i++)
-	{
-    #pragma HLS loop_tripcount min=1 max=1024
-	#pragma HLS PIPELINE II=INI_VAL
+	for (unsigned int i = 0; i < byte_count/16; i++) {
+          #pragma HLS loop_tripcount min=1 max=1024
+          #pragma HLS PIPELINE II=INI_VAL
 		data_t result_buf = state.read();
 		*(result+i) = result_buf;
 	}
@@ -395,43 +499,30 @@ uint32_t byte_count) {
      #pragma HLS array_partition variable=state_array complete
      #pragma HLS array_partition variable=result_array complete
 
-
      data_t result_temp;
-
      data_t state_temp;
 
-     for (unsigned int i = 0; i < byte_count/16; i++)
-     {
+     for (unsigned int i = 0; i < byte_count/16; i++) {
           #pragma HLS loop_tripcount min=1 max=1024
           state_temp = state.read();
 
           for(unsigned int s=0;s<16;s++)
-          {
                #pragma HLS unroll
                state_array[s] = state_temp(s*8+7,s*8);
-          }
+
+          unsigned int x,y;
 
 
-
-                 unsigned int x,y;
-
-
-                 #pragma HLS PIPELINE II=INI_VAL
-                 loop_rk1 :for(x=0;x<4;x++) {
-                         loop_rk2 : for(y=0;y<4;y++){
-                           result_array[y+x*4] = state_array[y+x*4]^ ekey[iteration * nb * 4 + x * nb + y];
-
-                   }
-             }
+          #pragma HLS PIPELINE II=INI_VAL
+          loop_rk1 :for(x=0;x<4;x++)
+               loop_rk2 : for(y=0;y<4;y++)
+                    result_array[y+x*4] = state_array[y+x*4]^ ekey[iteration * nb * 4 + x * nb + y];
 
 
-           for(unsigned int s=0;s<16;s++)
-           {
+          for(unsigned int s=0;s<16;s++)
                #pragma HLS unroll
-                result_temp.range(s*8+7,s*8) = result_array[s];
-           }
-
-
+               result_temp.range(s*8+7,s*8) = result_array[s];
+               
           result.write(result_temp);
      }
 }
@@ -440,11 +531,6 @@ void mixcolumn(
 data_stream_t &state,
 data_stream_t &result,
 uint32_t byte_count) {
-	//B1’ = (B1 * 2) XOR (B2 * 3) XOR (B3 * 1) XOR (B4 * 1)
-	//B2’ = (B1 * 1) XOR (B2 * 2) XOR (B3 * 3) XOR (B4 * 1)
-	//B3’ = (B1 * 1) XOR (B2 * 1) XOR (B3 * 2) XOR (B4 * 3)
-	//B4’ = (B1 * 3) XOR (B2 * 1) XOR (B3 * 1) XOR (B4 * 2)
-
 	uint8_t x; // control of the column
 	uint8_t result_array[16];
 	uint8_t state_array[16];
@@ -455,33 +541,26 @@ uint32_t byte_count) {
 
 	data_t state_temp,result_temp;
 
-	for (unsigned int i = 0; i < byte_count/16; i++)
-	{
+	for (unsigned int i = 0; i < byte_count/16; i++) {
           #pragma HLS loop_tripcount min=1 max=1024
           state_temp = state.read();
 
 
           for(unsigned int s=0;s<16;s++)
-          {
                #pragma HLS unroll
                state_array[s] = state_temp.range(s*8+7,s*8);
-          }
 
           #pragma HLS PIPELINE II=INI_VAL
-          loop_mx1 :for(x=0;x<4;x++){
-               result_array[x] = (gf2[state_array[x]])^(gf3[state_array[4+x]])^(state_array[8+x])^(state_array[12+x]);
-               result_array[4+x] = (state_array[x])^(gf2[state_array[4+x]])^(gf3[state_array[8+x]])^(state_array[12+x]);
-               result_array[8+x] = (state_array[x])^(state_array[4+x])^(gf2[state_array[8+x]])^(gf3[state_array[12+x]]);
-               result_array[12+x] = (gf3[state_array[x]])^(state_array[4+x])^(state_array[8+x])^(gf2[state_array[12+x]]);
-
-
+          loop_mx1 :for(x=0;x<4;x++) {               
+               result_array[x*4] = (gf2[state_array[x*4]])^(gf3[state_array[1+x*4]])^(state_array[2+x*4])^(state_array[3+x*4]);
+               result_array[1+x*4] = (state_array[x*4])^(gf2[state_array[1+x*4]])^(gf3[state_array[2+x*4]])^(state_array[3+x*4]);
+               result_array[2+x*4] = (state_array[x*4])^(state_array[1+x*4])^(gf2[state_array[2+x*4]])^(gf3[state_array[3+x*4]]);
+               result_array[3+x*4] = (gf3[state_array[x*4]])^(state_array[1+x*4])^(state_array[2+x*4])^(gf2[state_array[3+x*4]]);
           }
 
           for(unsigned int s=0;s<16;s++)
-          {
                #pragma HLS unroll
                result_temp.range(s*8+7,s*8) = result_array[s];
-          }
 
           result.write(result_temp);
 	}
