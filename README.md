@@ -1,5 +1,5 @@
-# gphcu
-General Purpose Heterogenous Computing Units
+# ENEAC
+ENergy Efficient Adaptive Computing with multi-grain heterogeneous architectures 
 
 Heterogeneous chips that combine CPUs and FPGAs can distribute processing so that the algorithm tasks are mapped onto the most suitable processing
 element. New software-defined high-level design environments for these chips use general purpose languages such as C++ and OpenCL for hardware and interface generation without the need for register transfer language expertise. These advances in
