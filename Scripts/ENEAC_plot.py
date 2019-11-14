@@ -45,6 +45,7 @@ import sys, getopt
 
 def main(argv):
     plottype = 0
+    axlabel = ''
     inputfile = [] #use array for input file
     inputfile_header = ''
     inputdir = []
@@ -111,14 +112,14 @@ def main(argv):
     my_dpi=96    
         
     try:
-        opts, args = getopt.getopt(argv,"hp:i:d:e:j:m:u:o:",["ptype=","ifile=","idir=","idfile=","iddir=","idmul=","mhfile=","ofile="])
+        opts, args = getopt.getopt(argv,"hp:a:i:d:e:j:m:u:o:",["ptype=","axlabel=","ifile=","idir=","idfile=","iddir=","idmul=","mhfile=","ofile="])
     except getopt.GetoptError:
         print 'Error: use -h option to see usage!'
         sys.exit(2)
     
     for opt, arg in opts:
         if opt == '-h':
-            print 'Usage: -p <plot type> -i <input file> -d <input directory> -e <ideal input file> -j <ideal input directory> -m <ideal multiplier> -u <multihap input file> -o <output file>'
+            print 'Usage: -p <plot type> -a <throughput axis label> -i <input file> -d <input directory> -e <ideal input file> -j <ideal input directory> -m <ideal multiplier> -u <multihap input file> -o <output file>'
             sys.exit(2)
         elif opt in ("-p", "--ptype"):
             if plottype != 0:
@@ -126,6 +127,12 @@ def main(argv):
 		        sys.exit(2)
             else:
                 plottype = int(arg)
+        elif opt in ("-a", "--axlabel"):
+            if axlabel != '':
+		        print 'Error in option <-a ' + arg + '>: -a flag has already been used! First usage is: <-a ' + axlabel + '>'
+		        sys.exit(2)
+            else:
+                axlabel = arg                
         elif opt in ("-i", "--ifile"):
             try:
                 fileopentest = open(arg, 'r')
@@ -898,7 +905,10 @@ def main(argv):
         ax.set_xticklabels(conf_chunk_size[0],fontsize='small',rotation='45')
         #ax.set(xlabel='Chunk Size [#]', ylabel='Execution Time [ms]')
         ax.set_xlabel('Chunk Size [#]', fontweight='bold')
-        ax.set_ylabel('Throughput [temps/ms]', fontweight='bold')
+        if axlabel != '':
+            ax.set_ylabel(axlabel, fontweight='bold')
+        else:    
+            ax.set_ylabel('Throughput [rows/ms]', fontweight='bold')
        
         custom_line = mlines.Line2D([], [], color='black', marker='*', markersize='25', label='Peak', lw='5')
         axhandles, dud = ax.get_legend_handles_labels()
