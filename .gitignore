@@ -42,4 +42,4 @@ Thumbs.db
 results/*
 scripts/old/*
 .gitattributes
-.gitignor
+.gitignore
