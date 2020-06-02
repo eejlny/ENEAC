@@ -795,6 +795,7 @@ def main(argv):
         ax1.set_xticklabels(config_labels,fontsize='small',rotation='45')
         
         ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+        #ax2.set_ylim(top=5)
         c=next(color)        
         tempbar = ax2.bar(index + bar_width*2, cpu_energy_np+fpga_energy_np, bar_width, alpha=opacity_back, color=c, edgecolor='black', label='Energy')
         #ax2.errorbar(index+bar_width*2, cpu_energy_np, fpga_energy_np, lolims='False', fmt='none' ,ecolor=tempbar.patches[0].get_facecolor())
